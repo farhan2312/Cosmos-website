@@ -5,7 +5,7 @@ export default function Hero() {
     // The main section is transparent in dark mode to show the global background
     <section className="bg-white dark:bg-transparent h-screen flex flex-col justify-center items-center text-center p-4">
       <div className="relative z-10">
-        {/* The word "Ignite" is now wrapped in a span with purple text colors */}
+        {/* The word "Cosmos" is now wrapped in a span with purple text colors */}
         <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-900 dark:text-white">
           <span className="text-purple-700 dark:text-purple-400">Cosmos</span>: Engineering the Future with AI.
         </h1>

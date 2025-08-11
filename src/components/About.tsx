@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Rocket, Lightbulb, Zap, BrainCircuit } from 'lucide-react';
 
 const timelineData = [
-  { year: '2021', title: 'The Spark of an Idea', description: 'Ignite was founded in a small research lab by a team of AI pioneers with a shared vision.', icon: <Lightbulb /> },
+  { year: '2021', title: 'The Spark of an Idea', description: 'Cosmos was founded in a small research lab by a team of AI pioneers with a shared vision.', icon: <Lightbulb /> },
   { year: '2022', title: 'First Breakthrough', description: 'Our first proprietary learning algorithm achieved a 99.8% accuracy rate, outperforming existing models.', icon: <Zap /> },
   { year: '2024', title: 'Securing the Future', description: 'Secured Series A funding, allowing us to expand our team and computational resources.', icon: <BrainCircuit /> },
   { year: '2025', title: 'Global Launch', description: 'Launched our flagship AI platform, making our technology accessible to businesses worldwide.', icon: <Rocket /> },
@@ -42,7 +42,7 @@ export default function About() {
           <h2 className="text-purple-700 dark:text-purple-400 font-bold uppercase tracking-wider">The Spark</h2>
           <h3 className="text-4xl md:text-5xl font-bold">Our Mission</h3>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            At Ignite, we believe in the power of artificial intelligence to solve the world&apos;s most complex problems. We are a team of passionate innovators, scientists, and engineers dedicated to pushing the boundaries of what&apos;s possible and building a brighter, more intelligent future for everyone.
+            At Cosmos, we believe in the power of artificial intelligence to solve the world&apos;s most complex problems. We are a team of passionate innovators, scientists, and engineers dedicated to pushing the boundaries of what&apos;s possible and building a brighter, more intelligent future for everyone.
           </p>
         </div>
         <div><Timeline /></div>

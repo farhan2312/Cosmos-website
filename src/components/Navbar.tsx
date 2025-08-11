@@ -32,7 +32,7 @@ export default function Navbar() {
           
           <a href="#" className="flex-shrink-0 flex items-center space-x-2">
             <Sparkles className="h-8 w-8 text-purple-400" />
-            <span className="font-bold text-2xl text-white">Ignite</span>
+            <span className="font-bold text-2xl text-white">Cosmos</span>
           </a>
 
           <div className="hidden md:block">

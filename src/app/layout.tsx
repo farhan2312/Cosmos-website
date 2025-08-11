@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext"; // Re-import the ThemeP
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ignite - AI Technology",
+  title: "Cosmos - AI Technology",
   description: "Engineering the Future with Artificial Intelligence",
 };
 

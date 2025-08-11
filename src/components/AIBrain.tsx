@@ -87,9 +87,9 @@ const Scene = () => {
       </Sphere>
 
       {/* Multiple orbiting rings with your new settings */}
-      <OrbitingRing count={50} radius={2.0} color="#c084fc" size={0.04} rotationSpeed={0.7} tilt={[0, 0, 0]} />
-      <OrbitingRing count={70} radius={2.8} color="#8b5cf6" size={0.03} rotationSpeed={-0.5} tilt={[Math.PI / 4, 0, 0]} />
-      <OrbitingRing count={100} radius={3.6} color="#6d28d9" size={0.025} rotationSpeed={0.2} tilt={[Math.PI / 2, Math.PI / 4, 0]} />
+      <OrbitingRing count={50} radius={2.0} color="#c084fc" size={0.4} rotationSpeed={0.7} tilt={[0, 0, 0]} />
+      <OrbitingRing count={70} radius={2.8} color="#8b5cf6" size={0.3} rotationSpeed={-0.5} tilt={[Math.PI / 4, 0, 0]} />
+      <OrbitingRing count={100} radius={3.6} color="#6d28d9" size={0.25} rotationSpeed={0.2} tilt={[Math.PI / 2, Math.PI / 4, 0]} />
     </group>
   );
 };

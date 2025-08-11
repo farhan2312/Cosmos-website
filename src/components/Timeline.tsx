@@ -8,7 +8,7 @@ const timelineData = [
   {
     year: '2021',
     title: 'The Spark of an Idea',
-    description: 'Ignite was founded in a small research lab by a team of AI pioneers with a shared vision.',
+    description: 'Cosmos was founded in a small research lab by a team of AI pioneers with a shared vision.',
     icon: <Lightbulb />,
   },
   {

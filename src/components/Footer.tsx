@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
 
         <p className="text-gray-500 text-sm">
-          © {new Date().getFullYear()} Ignite Technologies Inc. All rights reserved.
+          © {new Date().getFullYear()} Cosmos Technologies Inc. All rights reserved.
         </p>
 
       </div>
