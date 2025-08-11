@@ -5,43 +5,30 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Points, PointMaterial } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 import { Color, BufferAttribute } from 'three';
-import { useTheme } from '@/contexts/ThemeContext'; // Import the useTheme hook
+import * as THREE from 'three'; // Import THREE
 
 const Stars = (props: any) => {
-  const ref: any = useRef(null);
-  // Get the current theme from our global context
-  const { theme } = useTheme(); 
+  // Specify the type for the ref
+  const ref = useRef<THREE.Points>(null);
   const [sphere] = useState(() => random.inSphere(new Float32Array(5001), { radius: 1.2 }));
 
-  // This effect now re-runs whenever the theme changes
   useEffect(() => {
     if (ref.current) {
       const colors = new Float32Array(sphere.length);
       const color = new Color();
 
       for (let i = 0; i < sphere.length; i += 3) {
-        if (theme === 'dark') {
-          // Dark Mode: White stars with a darker purple
-          if (Math.random() > 0.80) {
-            color.set('#7e22ce'); // Darker Purple
-          } else {
-            color.set('#ffffff'); // White
-          }
+        if (Math.random() > 0.80) {
+          color.set('#a855f7');
         } else {
-          // Light Mode: Black stars with a standard purple
-          if (Math.random() > 0.05) {
-            color.set('#7e22ce'); // Standard Purple
-          } else {
-            color.set('#171717'); // Black
-          }
+          color.set('#ffffff');
         }
         colors.set([color.r, color.g, color.b], i);
       }
       
       ref.current.geometry.setAttribute('color', new BufferAttribute(colors, 3));
     }
-  // Add 'theme' to the dependency array so this effect re-runs on theme change
-  }, [sphere, theme]); 
+  }, [sphere]);
 
   useFrame((state, delta) => {
     if (ref.current && ref.current.rotation) {
@@ -56,7 +43,7 @@ const Stars = (props: any) => {
         <PointMaterial
           transparent
           vertexColors 
-          size={0.007}
+          size={0.002}
           sizeAttenuation={true}
           depthWrite={false}
         />

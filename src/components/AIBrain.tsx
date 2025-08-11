@@ -5,9 +5,20 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Sphere, Points, PointMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
+// Define a type for the component's props to avoid using 'any'
+interface OrbitingRingProps {
+  count: number;
+  radius: number;
+  color: string;
+  size: number;
+  rotationSpeed: number;
+  tilt: [number, number, number];
+}
+
 // This component creates a single orbiting ring of nodes
-const OrbitingRing = ({ count, radius, color, size, rotationSpeed, tilt }: any) => {
-  const ref: any = useRef(null);
+const OrbitingRing = ({ count, radius, color, size, rotationSpeed, tilt }: OrbitingRingProps) => {
+  // Specify the correct type for the ref
+  const ref = useRef<THREE.Points>(null);
 
   // Calculate the positions of the points on the ring once
   const points = useMemo(() => {
@@ -43,10 +54,10 @@ const OrbitingRing = ({ count, radius, color, size, rotationSpeed, tilt }: any) 
   );
 };
 
-// THE FIX: We create a new component for the scene itself.
-// All R3F hooks and 3D objects go inside this component.
+// This component contains the 3D scene and the mouse-tracking logic
 const Scene = () => {
-  const groupRef: any = useRef(null);
+  // Specify the correct type for the ref
+  const groupRef = useRef<THREE.Group>(null);
 
   // This hook makes the entire model subtly follow the mouse
   useFrame(({ mouse }) => {
@@ -63,7 +74,7 @@ const Scene = () => {
       <ambientLight intensity={7} />
       <pointLight position={[10, 10, 10]} intensity={1.5} />
       
-      {/* The central glowing sphere is now smaller */}
+      {/* The central glowing sphere with your new settings */}
       <Sphere args={[0.8, 32, 32]}>
         <meshStandardMaterial 
           color="#a855f7" 
@@ -75,21 +86,21 @@ const Scene = () => {
         />
       </Sphere>
 
-      {/* Multiple orbiting rings are now larger */}
-      <OrbitingRing count={50} radius={2.0} color="#c084fc" size={0.4} rotationSpeed={0.7} tilt={[0, 0, 0]} />
-      <OrbitingRing count={70} radius={2.8} color="#8b5cf6" size={0.3} rotationSpeed={-0.5} tilt={[Math.PI / 4, 0, 0]} />
-      <OrbitingRing count={100} radius={3.6} color="#6d28d9" size={0.25} rotationSpeed={0.2} tilt={[Math.PI / 2, Math.PI / 4, 0]} />
+      {/* Multiple orbiting rings with your new settings */}
+      <OrbitingRing count={50} radius={2.0} color="#c084fc" size={0.04} rotationSpeed={0.7} tilt={[0, 0, 0]} />
+      <OrbitingRing count={70} radius={2.8} color="#8b5cf6" size={0.03} rotationSpeed={-0.5} tilt={[Math.PI / 4, 0, 0]} />
+      <OrbitingRing count={100} radius={3.6} color="#6d28d9" size={0.025} rotationSpeed={0.2} tilt={[Math.PI / 2, Math.PI / 4, 0]} />
     </group>
   );
 };
 
-// This is the main component for our 3D model
+// This is the main component that renders the Canvas
 export default function AIBrain() {
   return (
-    <div className="w-full h-120 rounded-lg cursor-grab active:cursor-grabbing">
+    // Using h-[30rem] which is equivalent to h-120
+    <div className="w-full h-[30rem] rounded-lg cursor-grab active:cursor-grabbing">
       {/* Camera position is moved back to accommodate the larger model */}
       <Canvas camera={{ position: [0, 0, 7], fov: 50 }}>
-        {/* The Scene component is now rendered inside the Canvas */}
         <Scene />
       </Canvas>
     </div>
