@@ -32,6 +32,6 @@ body {
   
   /* Ensure the background covers the whole page and stays fixed during scroll */
   background-size: cover;
-  background-attachment: scroll;
-  background-position: center;
+  background-attachment: fixed;
+  background-position: top;
 }
