@@ -1,21 +1,51 @@
 'use client';
 
+import { CheckCircle } from 'lucide-react';
+
 export default function Hero() {
   return (
-    // The main section is transparent in dark mode to show the global background
-    <section className="bg-white dark:bg-transparent h-screen flex flex-col justify-center items-center text-center p-4">
-      <div className="relative z-10">
-        {/* The word "Cosmos" is now wrapped in a span with purple text colors */}
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 text-gray-900 dark:text-white">
-          <span className="text-purple-700 dark:text-purple-400">Cosmos</span>: Engineering the Future with AI.
+    // The background gradient has been removed to make this section transparent
+    <section 
+      id="home" 
+      className="relative text-white py-32 md:py-48 flex flex-col justify-center items-center text-center p-4 overflow-hidden"
+    >
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight text-white">
+          Navigate the Digital Universe with <span className="text-purple-300">Cosmic Innovation</span>
         </h1>
-        {/* Added theme-aware text colors to the paragraph */}
-        <p className="text-lg md:text-xl max-w-2xl mb-8 mx-auto text-gray-600 dark:text-gray-300">
-          We build intelligent systems that learn, adapt, and create.
+        <p className="text-lg md:text-xl max-w-3xl mb-8 mx-auto text-gray-300">
+          Explore infinite possibilities with COSMOS Innovation Labs. From AI-powered galaxies to enterprise constellations, we chart your course through the digital cosmos.
         </p>
-        <button className="bg-purple-700 hover:bg-purple-800 text-white font-bold py-3 px-6 rounded-lg shadow-lg shadow-purple-500/50 transform transition-all duration-300 hover:scale-110 animate-pulse">
-          Explore Our Innovations
-        </button>
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a 
+            href="#contact" 
+            className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg shadow-lg shadow-purple-500/50 transform transition-all duration-300 hover:scale-105"
+          >
+            Launch Your Journey →
+          </a>
+          <a 
+            href="#services" 
+            className="bg-transparent border-2 border-purple-400 text-purple-300 hover:bg-purple-400 hover:text-black font-bold py-3 px-8 rounded-lg transition-all duration-300"
+          >
+            Explore Our Galaxy
+          </a>
+        </div>
+
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-gray-300">
+          <div className="flex items-center gap-2">
+            <CheckCircle size={20} className="text-purple-400" />
+            <span>Stellar Enterprise Solutions</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle size={20} className="text-purple-400" />
+            <span>UAE Cosmic Expertise</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CheckCircle size={20} className="text-purple-400" />
+            <span>24/7 Mission Control</span>
+          </div>
+        </div>
       </div>
     </section>
   );

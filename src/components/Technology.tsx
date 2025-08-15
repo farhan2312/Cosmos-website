@@ -2,12 +2,12 @@ import AIBrain from './AIBrain'; // Import our new 3D model component
 
 export default function Technology() {
   return (
-    <section id="technology" className="bg-white dark:bg-transparent text-gray-900 dark:text-white py-20 px-4 sm:px-6 lg:px-8">
+    <section id="technology" className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         
         <div className="mb-12">
           <h2 className="text-purple-700 dark:text-purple-400 font-bold uppercase tracking-wider">
-            The Core
+            Galactic Domain Expertise
           </h2>
           <h3 className="text-4xl md:text-5xl font-bold mt-2">
             Our Technological Foundation

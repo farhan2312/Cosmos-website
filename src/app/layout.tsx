@@ -2,12 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import ParticleBackground from "@/components/ParticleBackground";
-import { ThemeProvider } from "@/contexts/ThemeContext"; // Re-import the ThemeProvider
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Cosmos - AI Technology",
   description: "Engineering the Future with Artificial Intelligence",
 };
@@ -18,12 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // The hardcoded "dark" class has been removed from here
     <html lang="en" className="!scroll-smooth">
+      {/* The background is now controlled by globals.css */}
       <body className={inter.className}>
-        {/* The ThemeProvider must wrap all components that use the theme */}
         <ThemeProvider>
-          <ParticleBackground />
           <Navbar />
           {children}
         </ThemeProvider>

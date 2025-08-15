@@ -74,22 +74,22 @@ const Scene = () => {
       <ambientLight intensity={7} />
       <pointLight position={[10, 10, 10]} intensity={1.5} />
       
-      {/* The central glowing sphere with your new settings */}
-      <Sphere args={[0.8, 32, 32]}>
+      {/* The central glowing sphere with larger size */}
+      <Sphere args={[1.2, 32, 32]}>
         <meshStandardMaterial 
           color="#a855f7" 
           emissive="#a855f7" // Makes the sphere glow
-          emissiveIntensity={2} 
+          emissiveIntensity={3} 
           toneMapped={false}
-          roughness={2}
-          metalness={1}
+          roughness={1.5}
+          metalness={0.8}
         />
       </Sphere>
 
-      {/* Multiple orbiting rings with your new settings */}
-      <OrbitingRing count={50} radius={2.0} color="#c084fc" size={0.4} rotationSpeed={0.7} tilt={[0, 0, 0]} />
-      <OrbitingRing count={70} radius={2.8} color="#8b5cf6" size={0.3} rotationSpeed={-0.5} tilt={[Math.PI / 4, 0, 0]} />
-      <OrbitingRing count={100} radius={3.6} color="#6d28d9" size={0.25} rotationSpeed={0.2} tilt={[Math.PI / 2, Math.PI / 4, 0]} />
+      {/* Multiple orbiting rings with larger size */}
+      <OrbitingRing count={50} radius={3.5} color="#c084fc" size={0.55} rotationSpeed={0.6} tilt={[0, 0, 0]} />
+      <OrbitingRing count={70} radius={4.8} color="#8b5cf6" size={0.45} rotationSpeed={-0.4} tilt={[Math.PI / 4, 0, 0]} />
+      <OrbitingRing count={90} radius={6.2} color="#6d28d9" size={0.35} rotationSpeed={0.15} tilt={[Math.PI / 2, Math.PI / 4, 0]} />
     </group>
   );
 };
@@ -98,9 +98,9 @@ const Scene = () => {
 export default function AIBrain() {
   return (
     // Using h-[30rem] which is equivalent to h-120
-    <div className="w-full h-[30rem] rounded-lg cursor-grab active:cursor-grabbing">
-      {/* Camera position is moved back to accommodate the larger model */}
-      <Canvas camera={{ position: [0, 0, 7], fov: 50 }}>
+    <div className="w-full h-[40rem] rounded-lg cursor-grab active:cursor-grabbing">
+      {/* Camera position moved back further with wider field of view */}
+      <Canvas camera={{ position: [0, 0, 12], fov: 60 }}>
         <Scene />
       </Canvas>
     </div>
