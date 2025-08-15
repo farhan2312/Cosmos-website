@@ -68,7 +68,7 @@ export default function Launch() {
                 <li className="flex items-start gap-4"><Phone className="text-purple-500 mt-1"/><div><strong>Cosmic Hotline</strong><p className="text-gray-600 dark:text-gray-300">+971 54 459 0094</p></div></li>
                 <li className="flex items-start gap-4"><Mail className="text-purple-500 mt-1"/><div><strong>Galactic Mail</strong><p className="text-gray-600 dark:text-gray-300">info@cosmosinnovation.ae</p></div></li>
                 <li className="flex items-start gap-4"><MapPin className="text-purple-500 mt-1"/><div><strong>Space Station</strong><p className="text-gray-600 dark:text-gray-300">Meydan, Dubai, UAE</p></div></li>
-                <li className="flex items-start gap-4"><Clock className="text-purple-500 mt-1"/><div><strong>Mission Hours</strong><p className="text-gray-600 dark:text-gray-300">Sunday - Thursday: 9 AM - 6 PM</p></div></li>
+                <li className="flex items-start gap-4"><Clock className="text-purple-500 mt-1"/><div><strong>Mission Hours</strong><p className="text-gray-600 dark:text-gray-300">Monday - Friday: 9 AM - 6 PM</p></div></li>
               </ul>
             </div>
             <div className="p-8 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
