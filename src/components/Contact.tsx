@@ -1,10 +1,50 @@
-import { Phone, Mail, MapPin, Clock, ShieldAlert } from 'lucide-react';
+'use client';
+
+import { useState } from 'react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 export default function Launch() {
+  // State to manage form submission status
+  const [result, setResult] = useState<string | null>(null);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Submitting....");
+    const formData = new FormData(event.currentTarget);
+
+    // --- IMPORTANT: PASTE YOUR ACCESS KEY HERE ---
+    formData.append("access_key", "f60624cf-a9ff-4383-b25b-84b5f627bb84"); 
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Form Submitted Successfully!");
+        // Reset the form after a successful submission
+        (event.target as HTMLFormElement).reset(); 
+      } else {
+        console.log("Error", data);
+        setResult(data.message);
+      }
+    } catch (error) {
+      console.log("Error", error);
+      setResult("Something went wrong!");
+    }
+
+    // Hide the result message after 5 seconds
+    setTimeout(() => {
+      setResult(null);
+    }, 5000);
+  };
+
   return (
     <section id="contact" className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold">Ready to Launch Your Digital Odyssey?</h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
@@ -15,34 +55,32 @@ export default function Launch() {
           </p>
         </div>
 
-        {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          
-          {/* Left Column: Form */}
           <div className="bg-gray-100 dark:bg-gray-900/50 p-8 rounded-lg border border-gray-200 dark:border-gray-700">
             <h3 className="text-2xl font-bold mb-6">Launch Free Mission Briefing</h3>
-            <form className="space-y-4">
+            {/* The onSubmit handler is added to the form */}
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">First Name</label>
-                  <input type="text" id="firstName" className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"/>
+                  <input type="text" name="firstName" id="firstName" required className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"/>
                 </div>
                 <div>
                   <label htmlFor="lastName" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">Last Name</label>
-                  <input type="text" id="lastName" className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"/>
+                  <input type="text" name="lastName" id="lastName" required className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"/>
                 </div>
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">Email</label>
-                <input type="email" id="email" className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"/>
+                <input type="email" name="email" id="email" required className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"/>
               </div>
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">Phone</label>
-                <input type="tel" id="phone" className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"/>
+                <input type="tel" name="phone" id="phone" required className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"/>
               </div>
               <div>
                 <label htmlFor="interest" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">Galaxy of Interest</label>
-                <select id="interest" className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2">
+                <select name="interest" id="interest" required className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2">
                   <option>Select a galaxy</option>
                   <option>AI & Data Intelligence</option>
                   <option>Intelligent Automation</option>
@@ -52,21 +90,22 @@ export default function Launch() {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">Message</label>
-                <textarea id="message" rows={4} className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"></textarea>
+                <textarea name="message" id="message" rows={4} required className="w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md p-2"></textarea>
               </div>
               <button type="submit" className="w-full font-bold py-3 px-6 rounded-lg text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 transition-all duration-300">
                 Launch Message
               </button>
+              {/* Display the result message here */}
+              {result && <p className="text-center mt-4">{result}</p>}
             </form>
           </div>
 
-          {/* Right Column: Info */}
           <div className="space-y-8 flex flex-col">
             <div className="bg-gray-100 dark:bg-gray-900/50 p-8 rounded-lg border border-gray-200 dark:border-gray-700 flex-grow flex flex-col">
               <h3 className="text-2xl font-bold mb-6">Mission Control Center</h3>
               <ul className="space-y-4 flex-grow">
                 <li className="flex items-start gap-4"><Phone className="text-purple-500 mt-1"/><div><strong>Cosmic Hotline</strong><p className="text-gray-600 dark:text-gray-300">+971 54 459 0094</p></div></li>
-                <li className="flex items-start gap-4"><Mail className="text-purple-500 mt-1"/><div><strong>Galactic Mail</strong><p className="text-gray-600 dark:text-gray-300">info@cosmosinnovation.ae</p></div></li>
+                <li className="flex items-start gap-4"><Mail className="text-purple-500 mt-1"/><div><strong>Galactic Mail</strong><p className="text-gray-600 dark:text-gray-300">info@cosmoslabs.tech</p></div></li>
                 <li className="flex items-start gap-4"><MapPin className="text-purple-500 mt-1"/><div><strong>Space Station</strong><p className="text-gray-600 dark:text-gray-300">Meydan, Dubai, UAE</p></div></li>
                 <li className="flex items-start gap-4"><Clock className="text-purple-500 mt-1"/><div><strong>Mission Hours</strong><p className="text-gray-600 dark:text-gray-300">Monday - Friday: 9 AM - 6 PM</p></div></li>
               </ul>
@@ -80,7 +119,6 @@ export default function Launch() {
             </div>
           </div>
         </div>
-        
       </div>
     </section>
   );

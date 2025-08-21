@@ -1,7 +1,23 @@
+'use client'; // This needs to be a client component for the onClick handler to work
+
 import { Linkedin, Twitter, Instagram, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
+  // This function handles the smooth scroll when a link is clicked
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault(); 
+    const targetId = e.currentTarget.hash.substring(1);
+    const elem = document.getElementById(targetId);
+    
+    if (elem) {
+      elem.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
+    // The background gradient has been removed to make the footer transparent
     <footer className="text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Top section with four columns */}
@@ -24,11 +40,12 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-bold text-lg">Cosmic Services</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="#" className="hover:text-purple-300">RPA Solutions</a></li>
-              <li><a href="#" className="hover:text-purple-300">Big Data Analytics</a></li>
-              <li><a href="#" className="hover:text-purple-300">AI/ML Solutions</a></li>
-              <li><a href="#" className="hover:text-purple-300">ERP Integration</a></li>
-              <li><a href="#" className="hover:text-purple-300">Application Development</a></li>
+              {/* Updated links to point to the #services section */}
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">RPA Solutions</a></li>
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">Big Data Analytics</a></li>
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">AI/ML Solutions</a></li>
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">ERP Integration</a></li>
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">Application Development</a></li>
             </ul>
           </div>
 
@@ -36,11 +53,12 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-bold text-lg">Galactic Solutions</h3>
             <ul className="space-y-2 text-sm text-gray-300">
-              <li><a href="#" className="hover:text-purple-300">Supply Chain Galaxy</a></li>
-              <li><a href="#" className="hover:text-purple-300">Middleware Integration</a></li>
-              <li><a href="#" className="hover:text-purple-300">RAG & Agentic AI</a></li>
-              <li><a href="#" className="hover:text-purple-300">Enterprise AI</a></li>
-              <li><a href="#" className="hover:text-purple-300">Cosmic Staff Augmentation</a></li>
+              {/* Updated links to point to the #services section */}
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">Supply Chain Galaxy</a></li>
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">Middleware Integration</a></li>
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">RAG & Agentic AI</a></li>
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">Enterprise AI</a></li>
+              <li><a href="#services" onClick={handleLinkClick} className="hover:text-purple-300">Cosmic Staff Augmentation</a></li>
             </ul>
           </div>
 
@@ -48,8 +66,8 @@ export default function Footer() {
           <div className="space-y-4">
             <h3 className="font-bold text-lg">Mission Control Info</h3>
             <ul className="space-y-3 text-sm text-gray-300">
-              <li className="flex items-center gap-3"><Phone size={16} className="text-purple-300" /><span>+971544590094</span></li>
-              <li className="flex items-center gap-3"><Mail size={16} className="text-purple-300" /><span>info@cosmosinnovation.ae</span></li>
+              <li className="flex items-center gap-3"><Phone size={16} className="text-purple-300" /><span>+971 54 459 0094</span></li>
+              <li className="flex items-center gap-3"><Mail size={16} className="text-purple-300" /><span>info@cosmoslabs.tech</span></li>
               <li className="flex items-center gap-3"><MapPin size={16} className="text-purple-300" /><span>Meydan, Dubai, UAE</span></li>
             </ul>
           </div>

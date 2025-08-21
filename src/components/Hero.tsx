@@ -39,7 +39,7 @@ export default function Hero() {
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle size={20} className="text-purple-400" />
-            <span>UAE Cosmic Expertise</span>
+            <span>UAE Based Expertise</span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle size={20} className="text-purple-400" />
