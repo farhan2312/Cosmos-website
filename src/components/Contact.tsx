@@ -24,7 +24,7 @@ export default function Launch() {
       const data = await response.json();
 
       if (data.success) {
-        setResult("Form Submitted Successfully!");
+        setResult("Message Launched Successfully!");
         // Reset the form after a successful submission
         (event.target as HTMLFormElement).reset(); 
       } else {
