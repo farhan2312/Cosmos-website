@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FTA HSRP Solutions — Strategic Report 2026</title>
+<style>
+/* ═══════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --white:      #ffffff;
+  --bg:         #f5f5f7;
+  --bg-card:    #ffffff;
+  --ink:        #1d1d1f;
+  --ink-2:      #3a3a3c;
+  --ink-3:      #6e6e73;
+  --ink-4:      #aeaeb2;
+  --rule:       #d2d2d7;
+  --blue:       #0071e3;
+  --blue-light: #e8f2fd;
+  --green:      #1d7a45;
+  --green-light:#e9f5ee;
+  --amber:      #b25000;
+  --amber-light:#fff3e8;
+  --red:        #c0392b;
+  --red-light:  #fdecea;
+  --radius-sm:  10px;
+  --radius-md:  16px;
+  --radius-lg:  20px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════════
+   STICKY NAV
+═══════════════════════════════════════════════ */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--rule);
+}
+.nav-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.nav-brand span { color: var(--blue); }
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 11px;
+  color: var(--ink-3);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--blue); }
+.nav-badge {
+  font-size: 10px;
+  color: var(--ink-3);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+/* ═══════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════ */
+.hero {
+  background: var(--white);
+  border-bottom: 1px solid var(--rule);
+  padding: 100px 24px 80px;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: bold;
+  color: var(--ink);
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin-bottom: 18px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--blue);
+}
+.hero-sub {
+  font-size: 17px;
+  color: var(--ink-3);
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.55;
+  font-weight: normal;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1px;
+  max-width: 760px;
+  margin: 0 auto;
+  background: var(--rule);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--rule);
+}
+.hero-stat {
+  flex: 1;
+  background: var(--white);
+  padding: 28px 20px;
+  text-align: center;
+}
+.hero-stat-num {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hero-stat-num.blue { color: var(--blue); }
+.hero-stat-num.green { color: var(--green); }
+.hero-stat-delta {
+  display: block;
+  font-size: 10px;
+  color: var(--green);
+  font-weight: bold;
+  margin-bottom: 6px;
+  letter-spacing: 0.03em;
+}
+.hero-stat-lbl {
+  display: block;
+  font-size: 10px;
+  color: var(--ink-4);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════ */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.section { padding: 80px 0 60px; }
+.section-label {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--ink);
+  letter-spacing: -0.018em;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.section-body {
+  font-size: 14px;
+  color: var(--ink-3);
+  max-width: 700px;
+  line-height: 1.75;
+  margin-bottom: 40px;
+}
+.section-body strong { color: var(--ink); }
+.section-body em { color: var(--blue); font-style: normal; }
+
+.grid { display: grid; gap: 14px; }
+.g2 { grid-template-columns: 1fr 1fr; }
+.g3 { grid-template-columns: 1fr 1fr 1fr; }
+.g4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+/* ═══════════════════════════════════════════════
+   CARDS
+═══════════════════════════════════════════════ */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.card-label {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 10px;
+  display: block;
+}
+.card h3 {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--ink);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.card p, .card li { font-size: 13px; color: var(--ink-3); line-height: 1.65; }
+.card ul { padding-left: 16px; }
+.card li { margin-bottom: 6px; }
+
+.card.dark { background: var(--ink); border-color: transparent; }
+.card.dark .card-label { color: #63b3ff; }
+.card.dark h3 { color: #f5f5f7; }
+.card.dark p, .card.dark li { color: rgba(245,245,247,0.65); }
+
+.card.blue-tint { background: var(--blue-light); border-color: rgba(0,113,227,0.15); }
+.card.blue-tint .card-label { color: var(--blue); }
+.card.blue-tint h3 { color: #004aad; }
+.card.blue-tint p, .card.blue-tint li { color: #1a3f6e; }
+
+.card.green-tint { background: var(--green-light); border-color: rgba(29,122,69,0.15); }
+.card.green-tint .card-label { color: var(--green); }
+.card.green-tint h3 { color: var(--green); }
+.card.green-tint p, .card.green-tint li { color: #1a4d30; }
+
+.card.amber-tint { background: var(--amber-light); border-color: rgba(178,80,0,0.15); }
+.card.amber-tint .card-label { color: var(--amber); }
+.card.amber-tint h3 { color: var(--amber); }
+.card.amber-tint p, .card.amber-tint li { color: #5a2800; }
+
+.card.red-tint { background: var(--red-light); border-color: rgba(192,57,43,0.15); }
+.card.red-tint .card-label { color: var(--red); }
+.card.red-tint h3 { color: var(--red); }
+.card.red-tint p, .card.red-tint li { color: #7a1a10; }
+
+.big-num { font-size: 42px; font-weight: bold; color: var(--blue); letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px; }
+.card.dark .big-num { color: #63b3ff; }
+
+/* ═══════════════════════════════════════════════
+   FINANCIAL STRIP
+═══════════════════════════════════════════════ */
+.fin-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+.fin-cell { padding: 28px 20px; text-align: center; border-right: 1px solid var(--rule); }
+.fin-cell:last-child { border-right: none; }
+.fin-val { display: block; font-size: 26px; font-weight: bold; color: var(--ink); letter-spacing: -0.025em; line-height: 1; margin-bottom: 4px; }
+.fin-delta { display: block; font-size: 11px; color: var(--green); font-weight: bold; margin-bottom: 6px; }
+.fin-delta.warn { color: var(--amber); }
+.fin-lbl { display: block; font-size: 10px; color: var(--ink-4); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ═══════════════════════════════════════════════
+   VALUE CHAIN
+═══════════════════════════════════════════════ */
+.value-chain {
+  display: flex;
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+.vc-node { flex: 1; padding: 22px 14px; text-align: center; border-right: 1px solid var(--rule); }
+.vc-node:last-child { border-right: none; }
+.vc-node.owned { background: #f0f6ff; }
+.vc-node.partial { background: #f5fbf7; }
+.vc-icon { font-size: 22px; margin-bottom: 8px; display: block; }
+.vc-name { display: block; font-size: 9px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 6px; }
+.vc-node.owned .vc-name { color: var(--blue); }
+.vc-node.partial .vc-name { color: var(--green); }
+.vc-desc { font-size: 10px; color: var(--ink-4); line-height: 1.45; }
+.vc-badge-pill {
+  display: inline-block; margin-top: 8px; font-size: 8px; font-weight: bold;
+  letter-spacing: 0.05em; text-transform: uppercase; padding: 3px 7px; border-radius: 20px;
+}
+.vc-node.owned .vc-badge-pill { background: rgba(0,113,227,0.12); color: var(--blue); }
+.vc-node.partial .vc-badge-pill { background: rgba(29,122,69,0.12); color: var(--green); }
+
+/* ═══════════════════════════════════════════════
+   SWOT
+═══════════════════════════════════════════════ */
+.swot { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.swot-cell { background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-md); padding: 28px; }
+.swot-head { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.swot-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.swot-head-text { font-size: 12px; font-weight: bold; letter-spacing: 0.06em; text-transform: uppercase; }
+.swot-cell.s .swot-dot { background: var(--green); }
+.swot-cell.s .swot-head-text { color: var(--green); }
+.swot-cell.w .swot-dot { background: var(--amber); }
+.swot-cell.w .swot-head-text { color: var(--amber); }
+.swot-cell.o .swot-dot { background: var(--blue); }
+.swot-cell.o .swot-head-text { color: var(--blue); }
+.swot-cell.t .swot-dot { background: var(--red); }
+.swot-cell.t .swot-head-text { color: var(--red); }
+.swot-cell ul { list-style: none; padding: 0; }
+.swot-cell li {
+  font-size: 12.5px; color: var(--ink-2); padding: 7px 0;
+  border-bottom: 1px solid #f0f0f5; line-height: 1.5;
+  display: flex; gap: 8px;
+}
+.swot-cell li:last-child { border-bottom: none; padding-bottom: 0; }
+.swot-arrow { flex-shrink: 0; color: var(--ink-4); font-size: 10px; margin-top: 3px; }
+
+/* ═══════════════════════════════════════════════
+   COMPETITIVE TABLE
+═══════════════════════════════════════════════ */
+.comp-wrap { background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-lg); overflow: hidden; }
+.comp-table { width: 100%; border-collapse: collapse; }
+.comp-table thead tr { background: var(--bg); border-bottom: 1px solid var(--rule); }
+.comp-table th { padding: 12px 18px; text-align: left; font-size: 10px; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); }
+.comp-table td { padding: 13px 18px; font-size: 12px; color: var(--ink-2); border-bottom: 1px solid #f0f0f5; vertical-align: top; line-height: 1.5; }
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table tr.fta td { background: #f0f6ff; font-weight: bold; }
+.comp-table tr.fta td:first-child { border-left: 3px solid var(--blue); }
+.dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+.dot.g { background: var(--green); }
+.dot.a { background: #f59e0b; }
+.dot.r { background: var(--red); }
+.level-pill { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 10px; font-weight: bold; }
+.level-pill.low { background: var(--green-light); color: var(--green); }
+.level-pill.med { background: var(--amber-light); color: var(--amber); }
+.level-pill.high { background: var(--red-light); color: var(--red); }
+
+/* ═══════════════════════════════════════════════
+   DIGITAL GAP ROWS
+═══════════════════════════════════════════════ */
+.gap-row {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 220px 1fr 140px;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 10px;
+  transition: box-shadow 0.2s;
+}
+.gap-row:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.gap-title { font-size: 13px; font-weight: bold; color: var(--ink); margin-bottom: 6px; }
+.gap-horizon {
+  display: inline-block; font-size: 10px; font-weight: bold;
+  padding: 2px 8px; border-radius: 20px; letter-spacing: 0.03em;
+}
+.gap-horizon.quick { background: var(--green-light); color: var(--green); }
+.gap-horizon.mid   { background: var(--amber-light); color: var(--amber); }
+.gap-horizon.long  { background: var(--blue-light); color: var(--blue); }
+.gap-desc { font-size: 12.5px; color: var(--ink-3); line-height: 1.6; }
+.gap-metrics { display: flex; flex-direction: column; gap: 8px; }
+.gap-metric { display: flex; justify-content: space-between; align-items: center; padding-bottom: 7px; border-bottom: 1px solid #f0f0f5; }
+.gap-metric:last-child { border-bottom: none; padding-bottom: 0; }
+.gap-metric-k { font-size: 10px; color: var(--ink-4); letter-spacing: 0.04em; text-transform: uppercase; }
+.gap-metric-v { font-size: 12px; font-weight: bold; color: var(--ink); }
+.gap-metric-v.blue { color: var(--blue); }
+.gap-metric-v.green { color: var(--green); }
+.ibar { height: 4px; background: #e8e8ed; border-radius: 2px; overflow: hidden; margin-top: 4px; }
+.ibar-fill { height: 100%; border-radius: 2px; }
+.ibar-fill.high { background: var(--green); }
+.ibar-fill.med  { background: #f59e0b; }
+
+/* ═══════════════════════════════════════════════
+   RECOMMENDATION CARDS
+═══════════════════════════════════════════════ */
+.rec-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 14px;
+  transition: box-shadow 0.25s;
+}
+.rec-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+.rec-head { padding: 18px 26px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid var(--rule); }
+.rec-num {
+  width: 28px; height: 28px; border-radius: 50%; background: var(--blue);
+  color: white; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: bold; flex-shrink: 0;
+}
+.rec-title { flex: 1; font-size: 14px; font-weight: bold; color: var(--ink); letter-spacing: -0.01em; }
+.rec-tag { font-size: 10px; font-weight: bold; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.04em; }
+.rec-tag.high { background: var(--green-light); color: var(--green); }
+.rec-tag.med  { background: var(--amber-light); color: var(--amber); }
+.rec-tag.strategic { background: var(--blue-light); color: var(--blue); }
+.rec-body { padding: 24px 26px; display: grid; grid-template-columns: 1fr 190px; gap: 28px; align-items: start; }
+.rec-text { font-size: 13px; color: var(--ink-3); line-height: 1.75; }
+.rec-text strong { color: var(--ink); font-weight: bold; }
+.rec-sidebar { background: var(--bg); border: 1px solid var(--rule); border-radius: var(--radius-sm); padding: 16px; }
+.rec-kpi { padding: 7px 0; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: baseline; }
+.rec-kpi:last-child { border-bottom: none; padding-bottom: 0; }
+.rec-kpi-k { font-size: 10px; color: var(--ink-4); letter-spacing: 0.04em; text-transform: uppercase; }
+.rec-kpi-v { font-size: 12px; font-weight: bold; color: var(--blue); }
+
+/* ═══════════════════════════════════════════════
+   PULL QUOTE
+═══════════════════════════════════════════════ */
+.pull-quote {
+  border-left: 3px solid var(--blue);
+  padding: 18px 26px;
+  margin: 32px 0;
+  background: var(--blue-light);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.pull-quote p { font-size: 16px; color: var(--ink-2); line-height: 1.55; font-style: italic; }
+.pull-quote cite { display: block; font-size: 10px; color: var(--ink-4); margin-top: 10px; font-style: normal; letter-spacing: 0.08em; text-transform: uppercase; }
+
+/* ═══════════════════════════════════════════════
+   SCORECARD & IMPACT
+═══════════════════════════════════════════════ */
+.scorecard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.score-card { background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius-md); padding: 28px; text-align: center; }
+.score-grade { font-size: 52px; font-weight: bold; color: var(--blue); letter-spacing: -0.04em; line-height: 1; margin-bottom: 4px; }
+.score-label { font-size: 10px; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px; }
+.score-desc { font-size: 12px; color: var(--ink-3); line-height: 1.6; }
+
+.impact-strip {
+  background: var(--white); border: 1px solid var(--rule);
+  border-radius: var(--radius-lg); overflow: hidden;
+  display: grid; grid-template-columns: repeat(5, 1fr);
+}
+.impact-cell { padding: 26px 18px; text-align: center; border-right: 1px solid var(--rule); }
+.impact-cell:last-child { border-right: none; }
+.impact-val { display: block; font-size: 24px; font-weight: bold; color: var(--ink); letter-spacing: -0.025em; line-height: 1; margin-bottom: 4px; }
+.impact-sub { display: block; font-size: 10px; color: var(--ink-4); margin-bottom: 6px; line-height: 1.4; }
+.impact-lbl { display: block; font-size: 10px; font-weight: bold; color: var(--blue); letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+.site-footer { background: var(--white); border-top: 1px solid var(--rule); padding: 40px 24px; text-align: center; }
+.footer-inner { max-width: 1080px; margin: 0 auto; }
+.footer-title { font-size: 13px; font-weight: bold; color: var(--ink); margin-bottom: 8px; }
+.footer-meta { font-size: 11px; color: var(--ink-4); line-height: 1.8; }
+.footer-divider { width: 40px; height: 1px; background: var(--rule); margin: 16px auto; }
+.footer-disc { font-size: 10px; color: var(--ink-4); max-width: 640px; margin: 0 auto; line-height: 1.7; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 860px) {
+  .nav-links { display: none; }
+  .hero-stats { flex-direction: column; }
+  .fin-strip { grid-template-columns: repeat(3,1fr); }
+  .g2, .g3, .g4 { grid-template-columns: 1fr; }
+  .swot { grid-template-columns: 1fr; }
+  .value-chain { flex-direction: column; }
+  .gap-row { grid-template-columns: 1fr; }
+  .rec-body { grid-template-columns: 1fr; }
+  .scorecard { grid-template-columns: 1fr; }
+  .impact-strip { grid-template-columns: repeat(2,1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <span class="nav-brand">FTA <span>HSRP</span> Solutions</span>
+    <ul class="nav-links">
+      <li><a href="#snapshot">Snapshot</a></li>
+      <li><a href="#valuechain">Value Chain</a></li>
+      <li><a href="#financials">Financials</a></li>
+      <li><a href="#competitive">Competitive</a></li>
+      <li><a href="#swot">SWOT</a></li>
+      <li><a href="#digital">Digital Gaps</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+    </ul>
+    <span class="nav-badge">April 2026</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Strategic Intelligence Report &nbsp;·&nbsp; Confidential</div>
+  <h1>FTA HSRP Solutions.<br><em>Deep Dive.</em></h1>
+  <p class="hero-sub">A complete assessment of business offerings, value chain position, digital gaps, and the EBITDA enhancement roadmap for India's leading vehicle compliance infrastructure company.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num blue">₹219 Cr</span>
+      <span class="hero-stat-delta">▲ 50% YoY</span>
+      <span class="hero-stat-lbl">FY2024 Revenue</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">~30%</span>
+      <span class="hero-stat-delta">India Market</span>
+      <span class="hero-stat-lbl">Market Share</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num green">+154%</span>
+      <span class="hero-stat-delta">FY2024</span>
+      <span class="hero-stat-lbl">EBITDA Growth</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">26%+</span>
+      <span class="hero-stat-delta">Since 2012</span>
+      <span class="hero-stat-lbl">10-Year CAGR</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">80M+</span>
+      <span class="hero-stat-delta">Vehicles Served</span>
+      <span class="hero-stat-lbl">Lifetime Output</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SECTION 01: SNAPSHOT ─── -->
+<div id="snapshot" style="background:var(--white); border-bottom:1px solid var(--rule);">
+  <div class="container"><div class="section">
+    <div class="section-label">01 — Company Snapshot</div>
+    <h2 class="section-title">Built on compliance. Scaled on trust.</h2>
+    <p class="section-body">FTA HSRP Solutions Pvt Ltd is India's dominant manufacturer, supplier, and installer of High Security Registration Plates (HSRP). Founded in 2012 in Gandhinagar, Gujarat, by engineer-turned-entrepreneur Saral Verma, FTA operates at the intersection of government-mandated compliance, automotive supply chain, and physical-digital security infrastructure. Its <em>quasi-monopolistic positioning</em> in a regulatory-driven market means demand is non-discretionary, inelastic, and growing in lockstep with India's vehicle sales.</p>
+
+    <div class="grid g4" style="margin-bottom:32px;">
+      <div class="card dark">
+        <span class="card-label">Founded</span>
+        <div class="big-num">2012</div>
+        <p>Gandhinagar, Gujarat. Bootstrapped — zero external capital raised. 13 years of organic compounding.</p>
+      </div>
+      <div class="card dark">
+        <span class="card-label">Headcount</span>
+        <div class="big-num">1,000+</div>
+        <p>Employees across manufacturing, operations, IT, logistics, and customer support nationwide.</p>
+      </div>
+      <div class="card dark">
+        <span class="card-label">Capacity</span>
+        <div class="big-num">3M</div>
+        <p>Blank license plates produced monthly. Personalized plates for 30,000 vehicles every single day.</p>
+      </div>
+      <div class="card dark">
+        <span class="card-label">Network</span>
+        <div class="big-num">300+</div>
+        <p>Points of presence nationally, serving 20,000+ auto dealer partners across all major states.</p>
+      </div>
+    </div>
+
+    <div class="grid g3">
+      <div class="card">
+        <span class="card-label">Four Business Lines</span>
+        <h3>Products & Services</h3>
+        <ul>
+          <li><strong>License Plates</strong> — Blank & personalized, ISO 7591-compliant, multi-layer security (holograms, RRS, snap-lock, QR code, laser etching)</li>
+          <li><strong>Machinery</strong> — IPM units, embossing press, hot stamping, combo machines, fully automated production lines</li>
+          <li><strong>Plate Frames</strong> — Security frames, snap-lock systems, and affixation accessories</li>
+          <li><strong>IT Solutions</strong> — Custom ERP, ATS, ADTC, ADTT, DTS mobile app, LMS, affixation app, inbound/outbound call center</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="card-label">Client Ecosystem</span>
+        <h3>Blue-Chip Partners</h3>
+        <ul>
+          <li>Maruti Suzuki, Tata Motors, Mahindra</li>
+          <li>Hero MotoCorp, Honda, Bajaj, TVS, Royal Enfield, Yamaha</li>
+          <li>Ather Energy, Porsche India</li>
+          <li>State Governments: Gujarat, Punjab, Assam</li>
+          <li>20,000+ authorized dealer touchpoints daily</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="card-label">Certifications</span>
+        <h3>Quality & Compliance Stack</h3>
+        <ul>
+          <li>ISO 9001:2015 — Quality Management</li>
+          <li>ISO 14001:2015 — Environmental Management</li>
+          <li>ISO 45001:2018 — Occupational Health & Safety</li>
+          <li>ISO/IEC 20000-1:2018 — IT Service Management</li>
+          <li>Dun & Bradstreet 3A2 — Financial Soundness Rating</li>
+        </ul>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ─── SECTION 02: VALUE CHAIN ─── -->
+<div id="valuechain" style="background:var(--bg);">
+  <div class="container"><div class="section">
+    <div class="section-label">02 — Value Chain Position</div>
+    <h2 class="section-title">Every critical node. Owned.</h2>
+    <p class="section-body">FTA doesn't sit at one node of the automotive supply chain — it spans five. From blank plate manufacturing through personalization, last-mile logistics, and dealer-level installation, FTA controls the most defensible segments of the HSRP value chain while building the digital infrastructure that ties OEMs, dealers, and state governments together in a single proprietary ecosystem.</p>
+
+    <div class="value-chain" style="margin-bottom:32px;">
+      <div class="vc-node">
+        <span class="vc-icon">⛏</span>
+        <span class="vc-name">Raw Material</span>
+        <div class="vc-desc">Aluminium strips, reflective sheets, holographic film, hot-stamping foil</div>
+      </div>
+      <div class="vc-node owned">
+        <span class="vc-icon">🏭</span>
+        <span class="vc-name">Manufacturing</span>
+        <div class="vc-desc">3M blank plates/month. In-house dies and automated production lines.</div>
+        <span class="vc-badge-pill">FTA Core</span>
+      </div>
+      <div class="vc-node owned">
+        <span class="vc-icon">🖨</span>
+        <span class="vc-name">Personalisation</span>
+        <div class="vc-desc">Govt-supervised embossing + hot stamping across 300+ nationwide offices.</div>
+        <span class="vc-badge-pill">FTA Core</span>
+      </div>
+      <div class="vc-node partial">
+        <span class="vc-icon">🚚</span>
+        <span class="vc-name">Logistics</span>
+        <div class="vc-desc">Outbound to 20,000+ dealers. Real-time DTS tracking app.</div>
+        <span class="vc-badge-pill">FTA Network</span>
+      </div>
+      <div class="vc-node partial">
+        <span class="vc-icon">🔧</span>
+        <span class="vc-name">Installation</span>
+        <div class="vc-desc">HSRP affixation app-verified at dealer points. Snap-lock enforcement.</div>
+        <span class="vc-badge-pill">FTA Network</span>
+      </div>
+      <div class="vc-node">
+        <span class="vc-icon">🚗</span>
+        <span class="vc-name">Vehicle Owner</span>
+        <div class="vc-desc">Online booking, appointment confirmation, compliance tracking.</div>
+      </div>
+      <div class="vc-node">
+        <span class="vc-icon">🏛</span>
+        <span class="vc-name">Govt / RTO</span>
+        <div class="vc-desc">National vehicle database integration and regulatory compliance.</div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-bottom:14px;">
+      <div class="card green-tint">
+        <span class="card-label">Structural Moat</span>
+        <h3>Why FTA's Position Is Defensible</h3>
+        <ul>
+          <li>Government tenders and state contracts create switching-cost barriers — displacement once embedded is operationally and politically costly</li>
+          <li>National vehicle database integration gives FTA data leverage no new entrant can replicate quickly</li>
+          <li>Proprietary machine manufacturing reduces external dependency and creates a B2B revenue stream no competitor simultaneously exploits</li>
+          <li>300-office physical network is years of capex to replicate — a genuine last-mile moat</li>
+          <li>B2B2G2C model makes demand inelastic to consumer sentiment — a powerful recession insulator</li>
+        </ul>
+      </div>
+      <div class="card amber-tint">
+        <span class="card-label">Chain Gaps Identified</span>
+        <h3>Where Value Is Leaking</h3>
+        <ul>
+          <li><strong>Raw material</strong> — No backward integration into aluminium or reflective film; full commodity price exposure</li>
+          <li><strong>Aftermarket</strong> — Damaged/stolen plate replacement massively undermonetized across 80M+ vehicle base</li>
+          <li><strong>Cross-border</strong> — Machinery and IT are export-ready; international penetration appears minimal</li>
+          <li><strong>Data monetization</strong> — Registration data and dealer behavior are untapped analytics assets</li>
+          <li><strong>EV transition</strong> — No visible smart plate or BEV-specific digital identity roadmap despite surging EV sales</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid g3">
+      <div class="card blue-tint">
+        <span class="card-label">Revenue Archetype</span>
+        <h3>B2B2G2C Model</h3>
+        <p>FTA sells to OEMs and state governments who deliver mandated compliance to consumers. Demand is non-discretionary — a structural insulator during economic slowdowns that most manufacturers never enjoy.</p>
+      </div>
+      <div class="card blue-tint">
+        <span class="card-label">Adjacent Expansion</span>
+        <h3>DTC & ADTT Ventures</h3>
+        <p>Driver Training Centers and Automated Driving Test Tracks signal FTA's intent to become a <em>transport compliance infrastructure company</em> — not just a plate manufacturer. These are naturally recurring government-anchored services.</p>
+      </div>
+      <div class="card blue-tint">
+        <span class="card-label">Tech Leverage</span>
+        <h3>Proprietary IT as a Moat</h3>
+        <p>In-house ERP, dealer portal, DTS mobile app, and affixation apps are genuine differentiators. Selling this stack internationally could be a capital-light, high-margin growth multiplier with immediate export potential across 30+ markets.</p>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ─── SECTION 03: FINANCIALS ─── -->
+<div id="financials" style="background:var(--white); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+  <div class="container"><div class="section">
+    <div class="section-label">03 — Financial X-Ray</div>
+    <h2 class="section-title">The numbers reveal an inflection point.</h2>
+    <p class="section-body">EBITDA growing at 154% on 50% revenue growth is the clearest signal of a business crossing an operational leverage inflection. Fixed-cost infrastructure — the 300 offices, the factory, the IT platform — is now serving dramatically higher volumes without proportional cost expansion. <strong>This is when manufacturers become platforms.</strong></p>
+
+    <div class="fin-strip">
+      <div class="fin-cell">
+        <span class="fin-val">₹219 Cr</span>
+        <span class="fin-delta">▲ 50% YoY</span>
+        <span class="fin-lbl">Revenue FY2024</span>
+      </div>
+      <div class="fin-cell">
+        <span class="fin-val">$40M+</span>
+        <span class="fin-delta">USD Equivalent</span>
+        <span class="fin-lbl">Est. FY2025</span>
+      </div>
+      <div class="fin-cell">
+        <span class="fin-val">+154%</span>
+        <span class="fin-delta">FY24 vs FY23</span>
+        <span class="fin-lbl">EBITDA Growth</span>
+      </div>
+      <div class="fin-cell">
+        <span class="fin-val">26%+</span>
+        <span class="fin-delta">Since 2012</span>
+        <span class="fin-lbl">Revenue CAGR 10yr</span>
+      </div>
+      <div class="fin-cell">
+        <span class="fin-val">₹76.4 Cr</span>
+        <span class="fin-delta warn">Paid-up Capital</span>
+        <span class="fin-lbl">Balance Sheet</span>
+      </div>
+    </div>
+
+    <div class="pull-quote">
+      <p>FTA is not a license plate company. It is India's largest vehicle compliance infrastructure operator — priced like a manufacturer while behaving like a platform. The gap between those two identities is where the next ₹500 Cr in enterprise value lives.</p>
+      <cite>— Analyst Observation, April 2026</cite>
+    </div>
+
+    <div class="grid g2" style="margin-bottom:14px;">
+      <div class="card">
+        <span class="card-label">Revenue Quality Analysis</span>
+        <h3>What Drives the Topline</h3>
+        <p style="margin-bottom:12px;">Three primary drivers, each with a distinct margin profile:</p>
+        <ul>
+          <li><strong>Plate volume (high volume / moderate margin)</strong> — 3M blanks/month at ~₹100–200/plate</li>
+          <li><strong>Personalization (recurring, regulated pricing)</strong> — State contracts with fixed per-unit pricing; 8.5M personalized in FY2025</li>
+          <li><strong>Machinery sales (lumpy, high-margin)</strong> — High-ticket B2B sales with strong gross margins per machine set sold</li>
+          <li><strong>IT Solutions (nascent, very high-margin)</strong> — ERP, mobile apps, support center — early but strategically critical for future valuation</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="card-label">Margin Detective Work</span>
+        <h3>What the EBITDA Surge Signals</h3>
+        <p style="margin-bottom:12px;">EBITDA growing 3× faster than revenue reveals specific operational dynamics:</p>
+        <ul>
+          <li><strong>Fixed cost leverage:</strong> 300 offices + factory now at higher utilization, spreading fixed costs over more units</li>
+          <li><strong>Mix shift:</strong> Machinery, IT solutions, and personalized plates carry far higher margins than blank plates</li>
+          <li><strong>Route optimization:</strong> DTS app improvements reduced last-mile delivery cost per plate materially</li>
+          <li><strong>State contract wins:</strong> Punjab and Assam add volume predictability and working capital velocity</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid g3">
+      <div class="card red-tint">
+        <span class="card-label">⚠ Financial Risk 1</span>
+        <h3>Government Receivables Concentration</h3>
+        <p>State government contracts carry 60–120 day payment cycles. At ₹219 Cr revenue, even 90-day DSO creates ₹55–60 Cr in tied-up working capital — meaningful cash flow strain for a bootstrapped, unfunded company.</p>
+      </div>
+      <div class="card red-tint">
+        <span class="card-label">⚠ Financial Risk 2</span>
+        <h3>Single-Market Revenue Concentration</h3>
+        <p>~100% India-derived revenue from a regulatory-dependent market creates policy risk. A change in HSRP mandate pricing or state contract re-tendering could materially impact topline within a single quarter.</p>
+      </div>
+      <div class="card amber-tint">
+        <span class="card-label">⚡ Revenue Gap</span>
+        <h3>No Subscription Model — Yet</h3>
+        <p>IT solutions and ERP are delivered as project/contract work, not recurring SaaS subscriptions. Shifting to platform pricing would dramatically improve revenue predictability, EBITDA quality, and — critically — the IPO valuation multiple.</p>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ─── SECTION 04: COMPETITIVE ─── -->
+<div id="competitive" style="background:var(--bg);">
+  <div class="container"><div class="section">
+    <div class="section-label">04 — Competitive Landscape</div>
+    <h2 class="section-title">Dominant at home. Exposed globally.</h2>
+    <p class="section-body">The global HSRP market was valued at USD 5.2 billion in 2024 and is forecast to reach USD 8.9 billion by 2033 at a 6.1% CAGR. India's domestic market is growing far faster — driven by a 2021 Supreme Court mandate. FTA's domestic competitors are fragmented; global competitors are technically superior but have no deep India footprint.</p>
+
+    <div class="comp-wrap" style="margin-bottom:14px;">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Origin</th>
+            <th>India Presence</th>
+            <th>Core Strength</th>
+            <th>Weakness vs FTA</th>
+            <th>Threat Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="fta">
+            <td>FTA HSRP Solutions</td>
+            <td>India — Gujarat</td>
+            <td><span class="dot g"></span>Dominant (~30%)</td>
+            <td>Network density, IT stack, OEM relationships, speed, machine manufacturing</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Rosmerta Safety Systems</td>
+            <td>India</td>
+            <td><span class="dot g"></span>Strong (UP, Delhi)</td>
+            <td>Dominant in Uttar Pradesh and Delhi NCR; established state contracts</td>
+            <td>No machinery sales; weaker IT/tech stack; limited OEM presence</td>
+            <td><span class="level-pill med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Avantika Elcon Pvt Ltd</td>
+            <td>India</td>
+            <td><span class="dot a"></span>Regional (Maha.)</td>
+            <td>Local supplier relationships; competitive pricing in Maharashtra</td>
+            <td>No national footprint; no proprietary IT ecosystem</td>
+            <td><span class="level-pill low">Low</span></td>
+          </tr>
+          <tr>
+            <td>Godawari Groups</td>
+            <td>India</td>
+            <td><span class="dot a"></span>Regional</td>
+            <td>Manufacturing efficiency in Tier 2 markets</td>
+            <td>No IT, no machinery ecosystem; purely volume-driven</td>
+            <td><span class="level-pill low">Low</span></td>
+          </tr>
+          <tr>
+            <td>TÖNNJES / Utsch Group</td>
+            <td>Germany</td>
+            <td><span class="dot r"></span>Minimal</td>
+            <td>Global technology leader; 60+ country presence; digital plate R&D</td>
+            <td>Price premium; no deep India government relationships</td>
+            <td><span class="level-pill med">Medium–High (Long-term)</span></td>
+          </tr>
+          <tr>
+            <td>Shimnit</td>
+            <td>South Africa</td>
+            <td><span class="dot r"></span>Minimal</td>
+            <td>Africa + emerging market HSRP specialist; strong B2G expertise</td>
+            <td>No India roots; different regulatory context</td>
+            <td><span class="level-pill low">Low (Short-term)</span></td>
+          </tr>
+          <tr>
+            <td>Promuk Hoffmann International</td>
+            <td>Europe</td>
+            <td><span class="dot r"></span>Negligible</td>
+            <td>European compliance expertise; high-security feature innovation</td>
+            <td>High cost structure; India not a strategic priority</td>
+            <td><span class="level-pill low">Low</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid g2">
+      <div class="card green-tint">
+        <span class="card-label">Competitive Advantages</span>
+        <h3>Why FTA Wins Consistently</h3>
+        <ul>
+          <li><strong>Speed-to-market:</strong> 30,000 personalized plates/day with same-day delivery — unmatched by any competitor nationally</li>
+          <li><strong>Vertical integration:</strong> Manufactures the machines that make the plates — no competitor simultaneously does both</li>
+          <li><strong>Digital lock-in:</strong> Proprietary ERP + dealer portal + mobile apps create sticky, multi-year relationships</li>
+          <li><strong>OEM trust at scale:</strong> Maruti, Tata, Hero, Bajaj as clients signals consistent quality across India's full vehicle market</li>
+          <li><strong>State embeddedness:</strong> Every state contract won is a reference credential for the next tender cycle</li>
+        </ul>
+      </div>
+      <div class="card red-tint">
+        <span class="card-label">Competitive Vulnerabilities</span>
+        <h3>Where FTA Is Exposed</h3>
+        <ul>
+          <li><strong>Digital plate threat:</strong> TÖNNJES and others are developing IoT-embedded "digital license plates" — technology FTA has no visible R&D in</li>
+          <li><strong>No external funding:</strong> PE-backed entrants could outbid FTA on large state tenders with aggressive pricing</li>
+          <li><strong>Key-person risk:</strong> Founder CEO + IT Head + Plant Head represent single points of failure without succession planning</li>
+          <li><strong>Regulatory risk:</strong> If GoI changes HSRP pricing structure or opens market further, the market share premium is competed away</li>
+        </ul>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ─── SECTION 05: SWOT ─── -->
+<div id="swot" style="background:var(--white); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);">
+  <div class="container"><div class="section">
+    <div class="section-label">05 — SWOT Analysis</div>
+    <h2 class="section-title">Clear strengths. Identifiable openings.</h2>
+
+    <div class="swot">
+      <div class="swot-cell s">
+        <div class="swot-head"><span class="swot-dot"></span><span class="swot-head-text">Strengths</span></div>
+        <ul>
+          <li><span class="swot-arrow">→</span>30% market share in a mandated, non-discretionary compliance product</li>
+          <li><span class="swot-arrow">→</span>13-year track record bootstrapped to ₹219 Cr — exceptional capital efficiency</li>
+          <li><span class="swot-arrow">→</span>Vertical integration: manufactures the machines that make the plates</li>
+          <li><span class="swot-arrow">→</span>Proprietary full-stack IT — ERP, dealer portals, mobile apps, call center</li>
+          <li><span class="swot-arrow">→</span>300+ office physical network — enormous last-mile capex barrier to replicate</li>
+          <li><span class="swot-arrow">→</span>Blue-chip OEM client base covering 95%+ of India's vehicle market</li>
+          <li><span class="swot-arrow">→</span>Strong state government relationships and national database integration</li>
+          <li><span class="swot-arrow">→</span>D&B 3A2 rating — credibility with suppliers, clients, and future lenders</li>
+        </ul>
+      </div>
+      <div class="swot-cell w">
+        <div class="swot-head"><span class="swot-dot"></span><span class="swot-head-text">Weaknesses</span></div>
+        <ul>
+          <li><span class="swot-arrow">→</span>100% India revenue concentration — zero geographic diversification</li>
+          <li><span class="swot-arrow">→</span>Private company opacity — no public financials or external audit trail</li>
+          <li><span class="swot-arrow">→</span>Key-person dependency on founder and 2–3 senior technical leaders</li>
+          <li><span class="swot-arrow">→</span>IT solutions under-priced as project work vs. recurring SaaS potential</li>
+          <li><span class="swot-arrow">→</span>No backward integration into raw materials (aluminium, reflective film)</li>
+          <li><span class="swot-arrow">→</span>No visible R&D in next-gen digital or connected license plates</li>
+          <li><span class="swot-arrow">→</span>Machinery and IT sub-units are unbranded — not marketed as standalone products</li>
+          <li><span class="swot-arrow">→</span>Working capital stress from government client 60–120 day payment cycles</li>
+        </ul>
+      </div>
+      <div class="swot-cell o">
+        <div class="swot-head"><span class="swot-dot"></span><span class="swot-head-text">Opportunities</span></div>
+        <ul>
+          <li><span class="swot-arrow">→</span>India's 28M annual vehicle sales growing to 35M+ by 2030 — direct volume tailwind</li>
+          <li><span class="swot-arrow">→</span>25 Indian states still partially implementing HSRP mandates</li>
+          <li><span class="swot-arrow">→</span>EV boom creates EV-specific green plates — a new premium pricing tier</li>
+          <li><span class="swot-arrow">→</span>Export machinery + IT stack to Southeast Asia, Africa, and Middle East</li>
+          <li><span class="swot-arrow">→</span>SaaS-ify the ERP and ATS platforms — recurring revenue transformation</li>
+          <li><span class="swot-arrow">→</span>Aftermarket plate replacement across 80M+ existing vehicle base</li>
+          <li><span class="swot-arrow">→</span>ADTT/DTC as government-linked recurring compliance services</li>
+          <li><span class="swot-arrow">→</span>IPO readiness — fits a ₹2,000–3,000 Cr valuation story by FY2027</li>
+        </ul>
+      </div>
+      <div class="swot-cell t">
+        <div class="swot-head"><span class="swot-dot"></span><span class="swot-head-text">Threats</span></div>
+        <ul>
+          <li><span class="swot-arrow">→</span>GoI policy change: price regulation or tender restructuring compressing margins</li>
+          <li><span class="swot-arrow">→</span>Digital license plates (IoT/e-ink) could disrupt the physical plate market entirely</li>
+          <li><span class="swot-arrow">→</span>TÖNNJES entering India with PE-backed capital and aggressive international pricing</li>
+          <li><span class="swot-arrow">→</span>Loss of 1–2 major state contracts creates a meaningful revenue cliff</li>
+          <li><span class="swot-arrow">→</span>Aluminium and reflective film commodity price spikes squeezing gross margins</li>
+          <li><span class="swot-arrow">→</span>Counterfeit plates in grey markets undermining official HSRP demand</li>
+          <li><span class="swot-arrow">→</span>Cybersecurity: national database integration makes FTA a high-value attack surface</li>
+        </ul>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ─── SECTION 06: DIGITAL GAPS ─── -->
+<div id="digital" style="background:var(--bg);">
+  <div class="container"><div class="section">
+    <div class="section-label">06 — Digital Gaps & Process Inefficiencies</div>
+    <h2 class="section-title">The current stack reflects 2018 ambitions.</h2>
+    <p class="section-body">FTA has demonstrated genuine digital sophistication relative to Indian manufacturing peers — building a proprietary ERP, mobile apps, and delivery tracking in-house is exceptional for a bootstrapped company. However, the current digital architecture has identifiable gaps across every layer that, if addressed, could add <strong>300–600 basis points to EBITDA margins</strong>.</p>
+
+    <div class="gap-row">
+      <div><div class="gap-title">Dynamic Pricing Engine</div><span class="gap-horizon mid">6–12 Months</span></div>
+      <div class="gap-desc">Plate and service pricing is fixed by government regulation or contract. A dynamic pricing engine for machinery, IT solutions, accessories, and the aftermarket replacement segment could improve per-transaction revenue by 15–25% without any volume change. Machinery bundles, expedited delivery, and premium accessories are all natural targets for tiered pricing strategies that no competitor is currently executing.</div>
+      <div class="gap-metrics">
+        <div class="gap-metric"><span class="gap-metric-k">EBITDA Impact</span><span class="gap-metric-v blue">High</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Revenue Uplift</span><span class="gap-metric-v green">15–25%</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Complexity</span><span class="gap-metric-v">Medium</span></div>
+        <div><div class="ibar"><div class="ibar-fill high" style="width:82%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="gap-row">
+      <div><div class="gap-title">Predictive Demand Forecasting</div><span class="gap-horizon mid">9–15 Months</span></div>
+      <div class="gap-desc">With 20,000 dealer touchpoints and 30,000 daily personalized plates, FTA generates enormous demand-signal data. Currently, production planning appears manual or rule-based. An ML demand-forecasting layer could reduce overproduction waste, cut buffer inventory by 20–30%, and improve working capital by ₹15–25 Cr — freeing cash without any revenue increase at all.</div>
+      <div class="gap-metrics">
+        <div class="gap-metric"><span class="gap-metric-k">WC Release</span><span class="gap-metric-v blue">₹15–25 Cr</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Inventory Cut</span><span class="gap-metric-v green">20–30%</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Complexity</span><span class="gap-metric-v">Medium</span></div>
+        <div><div class="ibar"><div class="ibar-fill high" style="width:78%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="gap-row">
+      <div><div class="gap-title">ERP → SaaS Productization</div><span class="gap-horizon long">12–24 Months</span></div>
+      <div class="gap-desc">FTA's custom ERP — covering license plate sales, eWallet, inventory, fleet lifecycle, and customer support — solves a problem no generic SAP or Oracle install addresses. It is a licensable, sellable product. Converting it from internal tool to white-label SaaS for international HSRP implementers, priced at USD 75–200K/year per country, could generate ₹10–25 Cr in near-zero marginal-cost recurring revenue. This is the most transformative digital action available.</div>
+      <div class="gap-metrics">
+        <div class="gap-metric"><span class="gap-metric-k">ARR Potential</span><span class="gap-metric-v blue">₹10–25 Cr</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Gross Margin</span><span class="gap-metric-v green">70–80%</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Complexity</span><span class="gap-metric-v">High</span></div>
+        <div><div class="ibar"><div class="ibar-fill high" style="width:90%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="gap-row">
+      <div><div class="gap-title">Digital-First Order & Payment</div><span class="gap-horizon quick">3–6 Months</span></div>
+      <div class="gap-desc">The public booking portal (bookhsrp.php) appears legacy PHP-based with no modern UX layer. A progressive web app with WhatsApp ordering, UPI auto-pay, real-time slot booking, and push notifications could reduce call center load by 30–40% and increase HSRP booking conversion by 20%+. This is the lowest-complexity, fastest-payback digital upgrade on the roadmap.</div>
+      <div class="gap-metrics">
+        <div class="gap-metric"><span class="gap-metric-k">Call Center Save</span><span class="gap-metric-v blue">30–40%</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Conversion Lift</span><span class="gap-metric-v green">+20%</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Complexity</span><span class="gap-metric-v">Low</span></div>
+        <div><div class="ibar"><div class="ibar-fill med" style="width:60%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="gap-row">
+      <div><div class="gap-title">IoT Machine Telemetry</div><span class="gap-horizon long">12–18 Months</span></div>
+      <div class="gap-desc">FTA's personalization machines are deployed at 300+ sites with no apparent remote monitoring capability. Adding IoT sensors (vibration, temperature, cycle count) enables predictive maintenance contracts — a high-margin recurring revenue stream — while reducing warranty costs from unexpected failures. Each deployed machine becomes a recurring revenue asset rather than a one-time sale event.</div>
+      <div class="gap-metrics">
+        <div class="gap-metric"><span class="gap-metric-k">Revenue Type</span><span class="gap-metric-v blue">Recurring</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Warranty Saving</span><span class="gap-metric-v green">Significant</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Complexity</span><span class="gap-metric-v">Medium</span></div>
+        <div><div class="ibar"><div class="ibar-fill med" style="width:58%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="gap-row">
+      <div><div class="gap-title">Dealer Analytics — "FTA Pro"</div><span class="gap-horizon quick">4–8 Months</span></div>
+      <div class="gap-desc">20,000+ dealers are daily-active users of FTA's systems and currently pay ₹0 in platform fees. A dealer-facing analytics dashboard — sales velocity, compliance scores, stock alerts, inventory forecasts — deepens stickiness and enables premium tiering. "FTA Pro" at ₹750–1,500/month at just 20% adoption = 4,000 dealers × ₹1,000/month = ₹48 Cr ARR at 80%+ gross margin, on an already-built platform.</div>
+      <div class="gap-metrics">
+        <div class="gap-metric"><span class="gap-metric-k">ARR Potential</span><span class="gap-metric-v blue">₹24–48 Cr</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Gross Margin</span><span class="gap-metric-v green">80%+</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Complexity</span><span class="gap-metric-v">Low</span></div>
+        <div><div class="ibar"><div class="ibar-fill high" style="width:72%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="gap-row">
+      <div><div class="gap-title">Aftermarket Replacement Platform</div><span class="gap-horizon quick">3–9 Months</span></div>
+      <div class="gap-desc">80 million vehicles carry FTA plates. Plates get damaged, stolen, or need replacement on vehicle sale or transfer. There is no visible FTA-owned channel to capture this aftermarket. A "Replace My Plate" digital funnel with doorstep appointment booking could unlock a ₹800 Cr+ addressable market with minimal incremental capex — the manufacturing and delivery infrastructure already exists and is already paid for.</div>
+      <div class="gap-metrics">
+        <div class="gap-metric"><span class="gap-metric-k">TAM</span><span class="gap-metric-v blue">₹800 Cr+</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Gross Margin</span><span class="gap-metric-v green">55–65%</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Complexity</span><span class="gap-metric-v">Low</span></div>
+        <div><div class="ibar"><div class="ibar-fill high" style="width:88%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="gap-row">
+      <div><div class="gap-title">Supply Chain Command Center</div><span class="gap-horizon mid">9–12 Months</span></div>
+      <div class="gap-desc">Raw material procurement (aluminium, holographic film, retro-reflective sheets) is likely done manually or via procurement teams, creating price variance across order cycles. A real-time supply chain visibility platform with auto-tendering, LME Aluminium price benchmarking, and supplier scorecards could save 3–5% of COGS — roughly ₹4–7 Cr annually at current revenue scale, at near-zero incremental investment.</div>
+      <div class="gap-metrics">
+        <div class="gap-metric"><span class="gap-metric-k">COGS Saving</span><span class="gap-metric-v blue">3–5%</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Annual Saving</span><span class="gap-metric-v green">₹4–7 Cr</span></div>
+        <div class="gap-metric"><span class="gap-metric-k">Complexity</span><span class="gap-metric-v">Medium</span></div>
+        <div><div class="ibar"><div class="ibar-fill med" style="width:65%"></div></div></div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px;">
+      <div class="card dark">
+        <span class="card-label">Process Gap — Manufacturing</span>
+        <h3>Production Line Automation Ceiling</h3>
+        <p>FTA's automated lines use linear computer-operated flows. Industry 4.0 upgrades — vision-based quality defect detection, robotic material handling between embossing and hot-stamping stages, digital twin simulation — could increase throughput 20–25% without adding floor space or headcount.</p>
+      </div>
+      <div class="card dark">
+        <span class="card-label">Process Gap — Compliance Intelligence</span>
+        <h3>No Automated Regulatory Monitoring</h3>
+        <p>HSRP standards evolve constantly across states and central government circulars. There is no automated regulatory change-monitoring system feeding into the ERP. In a B2G context, compliance lag means missed contract renewals and penalty clauses — entirely avoidable with a simple regulatory intelligence feed.</p>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- ─── SECTION 07: ROADMAP ─── -->
+<div id="roadmap" style="background:var(--white); border-top:1px solid var(--rule);">
+  <div class="container"><div class="section">
+    <div class="section-label">07 — EBITDA Enhancement Roadmap</div>
+    <h2 class="section-title">Six levers. Three years. One platform story.</h2>
+    <p class="section-body">Three distinct EBITDA levers exist: <strong>margin expansion</strong> (reducing cost per unit), <strong>revenue mix enrichment</strong> (shifting toward higher-margin lines), and <strong>new revenue creation</strong> (unlocking untapped monetization from existing assets). Sequenced below by impact-to-execution difficulty ratio.</p>
+
+    <div class="rec-card">
+      <div class="rec-head">
+        <span class="rec-num">1</span>
+        <span class="rec-title">Aftermarket Platform — "Replace My Plate"</span>
+        <span class="rec-tag high">High Impact</span>
+      </div>
+      <div class="rec-body">
+        <div class="rec-text">
+          <strong>The Insight.</strong> 80 million vehicles carry FTA plates. At a 3–5% annual plate damage and replacement rate, that is 2.4–4M replacement events per year — and FTA captures near zero of this market today.<br><br>
+          <strong>The Action.</strong> Launch a "Replace My Plate" microsite and WhatsApp bot. Integrate with vehicle registration data to auto-verify ownership. Schedule slots at the nearest affixation point. Charge a ₹400–600 premium over the standard plate rate for the convenience tier. Partner with motor insurers (Bajaj Allianz, New India Assurance) for claim-linked replacement to increase the average ticket size significantly.<br><br>
+          <strong>Why it's the top priority.</strong> Near-zero incremental capex — the factory, 300 offices, and delivery network already exist. Digital-only customer acquisition. Insurance co-billing. No regulatory hurdle. Highest ROI per engineering hour of any initiative on this roadmap.
+        </div>
+        <div class="rec-sidebar">
+          <div class="rec-kpi"><span class="rec-kpi-k">TAM</span><span class="rec-kpi-v">₹800 Cr+</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Year 2 Capture</span><span class="rec-kpi-v">₹40–80 Cr</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Gross Margin</span><span class="rec-kpi-v">55–65%</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Payback Period</span><span class="rec-kpi-v">&lt; 6 months</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Complexity</span><span class="rec-kpi-v">Low</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-head">
+        <span class="rec-num">2</span>
+        <span class="rec-title">SaaS-ify the IT Stack — White-Label ERP for International Markets</span>
+        <span class="rec-tag high">High Impact</span>
+      </div>
+      <div class="rec-body">
+        <div class="rec-text">
+          <strong>The Insight.</strong> FTA's custom ERP is a purpose-built vertical SaaS that no commercial vendor offers for the HSRP segment. Internationally, 30+ countries are implementing or upgrading HSRP systems right now. FTA has the product. It just doesn't sell it externally.<br><br>
+          <strong>The Action.</strong> Form an international SaaS business unit. Package the ERP as a multi-tenant cloud product. Target government implementers in Southeast Asia (Vietnam, Indonesia), MENA (Saudi Arabia, UAE), and Sub-Saharan Africa. Price: USD 75,000–200,000 annual license + implementation. Bundle with machinery sales for a complete "HSRP-as-a-Platform" offering — transforming FTA from plate manufacturer to infrastructure provider.<br><br>
+          <strong>The Multiplier.</strong> International SaaS revenue trades at 5–8× ARR vs. the 1–2× revenue multiple of a manufacturing business. A ₹20 Cr ARR SaaS book adds ₹100–160 Cr to enterprise value at exit — with zero additional plate manufactured.
+        </div>
+        <div class="rec-sidebar">
+          <div class="rec-kpi"><span class="rec-kpi-k">ARR Target Yr 3</span><span class="rec-kpi-v">₹15–25 Cr</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Gross Margin</span><span class="rec-kpi-v">70–80%</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">EBITDA Lift</span><span class="rec-kpi-v">+200–350bps</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">EV Multiplier</span><span class="rec-kpi-v">5–8× ARR</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Complexity</span><span class="rec-kpi-v">Medium–High</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-head">
+        <span class="rec-num">3</span>
+        <span class="rec-title">Supply Chain Intelligence — Commodity Exposure Reduction</span>
+        <span class="rec-tag med">Medium Impact</span>
+      </div>
+      <div class="rec-body">
+        <div class="rec-text">
+          <strong>The Insight.</strong> At ₹219 Cr revenue, raw material costs likely represent ₹90–130 Cr (40–60% of revenue). Even a 4% COGS reduction via better procurement intelligence equals ₹4–5 Cr direct EBITDA — with zero revenue increase required. This is pure margin expansion available today.<br><br>
+          <strong>The Action.</strong> Deploy a supply chain intelligence module within the existing ERP: (1) Auto-benchmark aluminium purchase prices against the LME daily index. (2) Maintain real-time supplier scorecards across delivery, quality, and price. (3) Forward purchase on predictable volumes — 3M plates/month creates highly forecastable raw material needs ideal for annual contract locking. (4) Consolidate reflective film and hologram procurement with negotiated annual contracts rather than spot purchasing.
+        </div>
+        <div class="rec-sidebar">
+          <div class="rec-kpi"><span class="rec-kpi-k">COGS Saving</span><span class="rec-kpi-v">3–5%</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Annual Saving</span><span class="rec-kpi-v">₹4–7 Cr</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">EBITDA Lift</span><span class="rec-kpi-v">+150–250bps</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Complexity</span><span class="rec-kpi-v">Low–Medium</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-head">
+        <span class="rec-num">4</span>
+        <span class="rec-title">Dealer Subscription Tier — "FTA Pro" Analytics Product</span>
+        <span class="rec-tag med">Medium Impact</span>
+      </div>
+      <div class="rec-body">
+        <div class="rec-text">
+          <strong>The Insight.</strong> 20,000 auto dealers are captive, daily-active users of FTA's systems paying exactly ₹0 in platform fees today. This is the same dynamic that Shopify and Zepto exploited — the distribution network itself becomes a monetizable platform, and the platform charges for premium access.<br><br>
+          <strong>The Action.</strong> Launch "FTA Pro" at ₹750–1,500/dealer/month. Bundle: advanced demand analytics (plate velocity, peak day forecasting, inventory alerts), priority delivery windows, co-branded digital marketing tools, and compliance training credits via the existing LMS. At just 20% adoption of 20,000 dealers = 4,000 Pro dealers × ₹1,000/month = ₹48 Cr ARR at 80%+ gross margin — on an already-built platform that costs nothing more to run.
+        </div>
+        <div class="rec-sidebar">
+          <div class="rec-kpi"><span class="rec-kpi-k">ARR Potential</span><span class="rec-kpi-v">₹24–48 Cr</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Gross Margin</span><span class="rec-kpi-v">75–85%</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">EBITDA Lift</span><span class="rec-kpi-v">+300–500bps</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Complexity</span><span class="rec-kpi-v">Low</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-head">
+        <span class="rec-num">5</span>
+        <span class="rec-title">Predictive Manufacturing & Inventory Optimization</span>
+        <span class="rec-tag med">Medium Impact</span>
+      </div>
+      <div class="rec-body">
+        <div class="rec-text">
+          <strong>The Insight.</strong> 30,000 personalized plates/day with significant regional variance by OEM launch cycle, government deadlines, and seasonal vehicle sales creates highly predictable but currently manually-managed demand patterns. Excess inventory, emergency logistics runs, and overtime production are silent but consistent margin killers.<br><br>
+          <strong>The Action.</strong> Build an ML demand forecasting model trained on OEM production schedules (available from dealer integration data), historical RTO registration data, and historical plate order patterns. Feed outputs into automated production scheduling and raw material ordering triggers. Target: reduce buffer inventory by 25%, cut emergency logistics costs by 40%, eliminate overtime from reactive scheduling. Executable within the existing ERP infrastructure in 3–4 months of focused data science work.
+        </div>
+        <div class="rec-sidebar">
+          <div class="rec-kpi"><span class="rec-kpi-k">WC Improvement</span><span class="rec-kpi-v">₹12–20 Cr</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">OpEx Saving</span><span class="rec-kpi-v">₹5–8 Cr</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">EBITDA Lift</span><span class="rec-kpi-v">+120–200bps</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Complexity</span><span class="rec-kpi-v">Medium</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rec-card">
+      <div class="rec-head">
+        <span class="rec-num">6</span>
+        <span class="rec-title">EV Green Plate Premium Tier + Smart Plate R&D</span>
+        <span class="rec-tag strategic">Strategic Imperative</span>
+      </div>
+      <div class="rec-body">
+        <div class="rec-text">
+          <strong>The Insight.</strong> India mandates lime-green plates for battery EVs. EV sales are growing at 40%+ annually. Ather Energy is already an FTA client. Yet there is no visible dedicated EV plate product line, differentiated pricing strategy, or smart plate R&D program. This is a strategic blind spot that needs closing before a competitor occupies the space.<br><br>
+          <strong>The Action.</strong> Develop an EV HSRP Premium line with: (1) Green-plate production with a distinct hologram color scheme and RRS configuration. (2) QR code linking to a vehicle-owner portal with charging station data integration. (3) An NFC-embedded "smart plate" pilot for luxury EVs — Ather 450X, BYD, Porsche Taycan — as a precursor to a full connected vehicle identity layer across the EV fleet.<br><br>
+          <strong>The Strategic Case.</strong> If FTA does not build smart plates, TÖNNJES will. Being the incumbent smart plate provider for India's EV transition is a position worth protecting now, while the market is nascent and OEM switching costs are still low.
+        </div>
+        <div class="rec-sidebar">
+          <div class="rec-kpi"><span class="rec-kpi-k">EV TAM by 2030</span><span class="rec-kpi-v">₹300–500 Cr</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Premium Uplift</span><span class="rec-kpi-v">30–50%/plate</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Time Horizon</span><span class="rec-kpi-v">12–24 months</span></div>
+          <div class="rec-kpi"><span class="rec-kpi-k">Complexity</span><span class="rec-kpi-v">Medium–High</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGGREGATE IMPACT -->
+    <div style="margin-top:40px;">
+      <p style="font-size:10px; font-weight:bold; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-3); margin-bottom:14px;">Aggregate EBITDA Impact — Three Year View</p>
+      <div class="impact-strip">
+        <div class="impact-cell">
+          <span class="impact-val">+154%</span>
+          <span class="impact-sub">FY2024 Baseline</span>
+          <span class="impact-lbl">EBITDA Growth</span>
+        </div>
+        <div class="impact-cell">
+          <span class="impact-val">+400bps</span>
+          <span class="impact-sub">Supply chain + ops</span>
+          <span class="impact-lbl">Margin Expansion</span>
+        </div>
+        <div class="impact-cell">
+          <span class="impact-val">+700bps</span>
+          <span class="impact-sub">SaaS + dealer subs</span>
+          <span class="impact-lbl">Mix Enrichment</span>
+        </div>
+        <div class="impact-cell">
+          <span class="impact-val">₹150 Cr+</span>
+          <span class="impact-sub">Aftermarket + EV by Yr 3</span>
+          <span class="impact-lbl">New Revenue</span>
+        </div>
+        <div class="impact-cell">
+          <span class="impact-val">₹2,500 Cr</span>
+          <span class="impact-sub">At 7–8× revenue multiple</span>
+          <span class="impact-lbl">EV Potential</span>
+        </div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- VERDICT -->
+<div style="background:var(--bg); border-top:1px solid var(--rule);">
+  <div class="container"><div class="section" style="padding-bottom:40px;">
+    <div class="section-label">Analyst's Verdict</div>
+    <h2 class="section-title">A platform dressed as a manufacturer.</h2>
+    <div class="pull-quote">
+      <p>FTA is not a license plate company. It is India's largest vehicle compliance infrastructure operator — priced like a manufacturer while behaving like a platform. The gap between those two identities is where the next ₹500 Cr in enterprise value lives.</p>
+      <cite>— Strategic Assessment, April 2026</cite>
+    </div>
+    <div class="scorecard">
+      <div class="score-card">
+        <div class="score-grade">A+</div>
+        <div class="score-label">Business Quality</div>
+        <div class="score-desc">Regulatory moat + network density + vertical integration is a rare trifecta. Bootstrapped to ₹219 Cr on organic cash flow signals exceptional capital efficiency. The EBITDA trajectory is an inflection, not a blip.</div>
+      </div>
+      <div class="score-card">
+        <div class="score-grade">B+</div>
+        <div class="score-label">Digital Maturity</div>
+        <div class="score-desc">Genuinely ahead of Indian manufacturing peers in IT investment, but still fundamentally a digital-operations business rather than a digital-product business. The SaaS conversion is the highest-ROI transformation available.</div>
+      </div>
+      <div class="score-card">
+        <div class="score-grade">A</div>
+        <div class="score-label">Growth Trajectory</div>
+        <div class="score-desc">India's vehicle market is a structural tailwind for another decade. Aftermarket, EV transition, international IT exports, and government mandates provide multiple non-correlated growth vectors. IPO readiness by FY2027 is credible.</div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-title">FTA HSRP Solutions Pvt Ltd — Strategic Intelligence Report</div>
+    <div class="footer-meta">CIN: U74140GJ2012PTC068782 &nbsp;·&nbsp; Gandhinagar, Gujarat &nbsp;·&nbsp; Established 2012</div>
+    <div class="footer-divider"></div>
+    <div class="footer-disc">Prepared April 2026. Based on public company filings, corporate website, Tofler, Tracxn, Dun & Bradstreet, and global HSRP industry market research. All financial estimates are based on publicly available data and analyst inference. This report is for analytical and advisory purposes only and does not constitute investment advice.</div>
+  </div>
+</footer>
+
+</body>
+</html>
