@@ -1,23 +1,8 @@
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Services from '@/components/Services';
-import Technology from '@/components/Technology';
-import Footer from '@/components/Footer';
-import Contact from '@/components/Contact';
-import WhyChooseUs from '@/components/WhyChooseUs';
-import Industries from '@/components/Industries'
+import HomeView from '@/views/HomeView';
+import { meta } from '@/lib/seo';
 
-export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <Services />
-      <About /> {/* Moved to be after Services */}
-      <Technology />
-      <WhyChooseUs />
-      <Industries />
-      <Contact />
-      <Footer /> 
-    </main>
-  );
+export const metadata = meta("COSMOS Innovation Labs — Technology that moves business forward", "AI, data and enterprise technology built around the way your business actually works.");
+
+export default function Page() {
+  return <HomeView />;
 }

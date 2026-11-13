@@ -1,0 +1,915 @@
+{
+  "services": [
+    {
+      "name": "AI & Intelligent Systems",
+      "slug": "ai-intelligent-systems",
+      "hero": "AI that works with your business.",
+      "intro": "We design intelligent systems that help people make better decisions, automate complex work, and move faster.",
+      "support": "AI · Intelligent Automation · AI Agents · Decision Intelligence",
+      "problemTitle": "AI is everywhere. Making it useful is harder.",
+      "problemBody": "Businesses have data, systems and processes everywhere — but intelligence often remains disconnected from the work that needs it.",
+      "problemClosing": "We bring AI into the flow of the business.",
+      "problems": [
+        {
+          "title": "Disconnected data",
+          "body": "Intelligence is only as useful as the information behind it."
+        },
+        {
+          "title": "Manual processes",
+          "body": "People spend time on work that technology can handle."
+        },
+        {
+          "title": "Fragmented AI",
+          "body": "Experiments rarely become part of everyday operations."
+        }
+      ],
+      "capTitle": "Intelligence, built around the work.",
+      "capabilities": [
+        {
+          "title": "AI Agents",
+          "body": "Digital agents that can reason, act and assist across business processes."
+        },
+        {
+          "title": "Generative AI",
+          "body": "Enterprise-ready AI for creating, finding and working with knowledge."
+        },
+        {
+          "title": "Intelligent Automation",
+          "body": "Automated workflows that connect people, systems and decisions."
+        },
+        {
+          "title": "Machine Learning",
+          "body": "Models that turn business data into predictions and insights."
+        },
+        {
+          "title": "Knowledge Intelligence",
+          "body": "Make organizational knowledge easier to find, understand and use."
+        },
+        {
+          "title": "Decision Intelligence",
+          "body": "Bring data, context and AI together to support better decisions."
+        }
+      ],
+      "processTitle": "From idea to intelligence.",
+      "stages": [
+        {
+          "title": "01 — Understand",
+          "body": "We identify where intelligence can create real value."
+        },
+        {
+          "title": "02 — Design",
+          "body": "We design the right AI system around your people, data and processes."
+        },
+        {
+          "title": "03 — Build",
+          "body": "We develop, integrate and test the solution in your environment."
+        },
+        {
+          "title": "04 — Scale",
+          "body": "We move from a working solution to something the business can rely on."
+        }
+      ],
+      "impactTitle": "What changes when intelligence works.",
+      "impacts": [
+        {
+          "title": "Faster decisions",
+          "body": "Get the right information when it matters."
+        },
+        {
+          "title": "Less manual work",
+          "body": "Automate repetitive processes and give teams time back."
+        },
+        {
+          "title": "Better access to knowledge",
+          "body": "Turn scattered information into something people can use."
+        },
+        {
+          "title": "Smarter operations",
+          "body": "Connect intelligence to the processes that keep the business moving."
+        },
+        {
+          "title": "Scalable AI",
+          "body": "Move beyond experiments to systems built for real use."
+        }
+      ],
+      "closing": "AI should not sit beside the business. It should work within it.",
+      "cta": "Have an AI problem worth solving?",
+      "ctaBody": "Let's start with the problem — and build from there."
+    },
+    {
+      "name": "Data & Decision Intelligence",
+      "slug": "data-decision-intelligence",
+      "hero": "Turn data into better decisions.",
+      "intro": "We connect data, analytics and intelligence to help businesses see what matters and act with confidence.",
+      "support": "Data Engineering · Analytics · Business Intelligence · Predictive Intelligence",
+      "problemTitle": "You have the data. But can you see the answer?",
+      "problemBody": "Data is often spread across systems, teams and platforms — making it difficult to turn information into timely decisions.",
+      "problemClosing": "We bring it together.",
+      "problems": [
+        {
+          "title": "Fragmented data",
+          "body": "Information sits across disconnected systems and sources."
+        },
+        {
+          "title": "Too much information",
+          "body": "More data does not always mean more clarity."
+        },
+        {
+          "title": "Slow decisions",
+          "body": "When insights take too long to reach the people who need them, opportunities are lost."
+        }
+      ],
+      "capTitle": "From data to clarity.",
+      "capabilities": [
+        {
+          "title": "Data Engineering",
+          "body": "Build reliable data foundations that bring information together."
+        },
+        {
+          "title": "Business Intelligence",
+          "body": "Turn complex data into clear, accessible business insights."
+        },
+        {
+          "title": "Advanced Analytics",
+          "body": "Go beyond reporting to understand patterns, drivers and opportunities."
+        },
+        {
+          "title": "Predictive Intelligence",
+          "body": "Use data and models to anticipate what could happen next."
+        },
+        {
+          "title": "Data Visualisation",
+          "body": "Make complex information easier to see, understand and act on."
+        },
+        {
+          "title": "Decision Intelligence",
+          "body": "Bring data, context and intelligence together to support better decisions."
+        }
+      ],
+      "processTitle": "From information to action.",
+      "stages": [
+        {
+          "title": "01 — Connect",
+          "body": "Bring data together across systems, sources and teams."
+        },
+        {
+          "title": "02 — Understand",
+          "body": "Identify the patterns, signals and insights that matter."
+        },
+        {
+          "title": "03 — Enable",
+          "body": "Put intelligence where decisions are being made."
+        },
+        {
+          "title": "04 — Evolve",
+          "body": "Continuously improve the way your business uses data."
+        }
+      ],
+      "impactTitle": "When data becomes useful, decisions change.",
+      "impacts": [
+        {
+          "title": "Clearer visibility",
+          "body": "See what is happening across the business."
+        },
+        {
+          "title": "Faster decisions",
+          "body": "Give teams the information they need, when they need it."
+        },
+        {
+          "title": "Better forecasting",
+          "body": "Move from looking at what happened to anticipating what comes next."
+        },
+        {
+          "title": "Connected intelligence",
+          "body": "Bring data, analytics and business context together."
+        },
+        {
+          "title": "Confident action",
+          "body": "Turn insights into decisions that move the business forward."
+        }
+      ],
+      "closing": "Better data is useful. Better decisions are the outcome.",
+      "cta": "Have a data problem worth solving?",
+      "ctaBody": ""
+    },
+    {
+      "name": "Intelligent Automation",
+      "slug": "intelligent-automation",
+      "hero": "Make work flow better.",
+      "intro": "We connect people, processes and technology to automate repetitive work, simplify operations and help teams focus on what matters.",
+      "support": "Process Automation · RPA · Intelligent Workflows · AI Agents",
+      "problemTitle": "Too much work still happens manually. Disconnected systems, repetitive tasks and approval-heavy processes slow teams down and create room for errors.",
+      "problemBody": "Disconnected systems, repetitive tasks and approval-heavy processes slow teams down and create room for errors.",
+      "problemClosing": "We make work move.",
+      "problems": [
+        {
+          "title": "Repetitive work",
+          "body": "People spend valuable time on tasks that could be automated."
+        },
+        {
+          "title": "Disconnected processes",
+          "body": "Work moves between systems, teams and spreadsheets without a seamless flow."
+        },
+        {
+          "title": "Operational friction",
+          "body": "Manual handoffs and bottlenecks make everyday processes slower than they need to be."
+        }
+      ],
+      "capTitle": "Automation that works across the business.",
+      "capabilities": [
+        {
+          "title": "Process Automation",
+          "body": "Automate repetitive processes and simplify everyday operations."
+        },
+        {
+          "title": "Robotic Process Automation",
+          "body": "Handle structured, rule-based tasks with software that works alongside your teams."
+        },
+        {
+          "title": "Intelligent Workflows",
+          "body": "Connect people, systems and decisions into smoother end-to-end workflows."
+        },
+        {
+          "title": "AI-Powered Automation",
+          "body": "Combine AI with automation to handle more complex tasks and processes."
+        },
+        {
+          "title": "Document Intelligence",
+          "body": "Extract, understand and process information from documents automatically."
+        },
+        {
+          "title": "AI Agents",
+          "body": "Create digital agents that can perform tasks, coordinate actions and assist teams."
+        }
+      ],
+      "processTitle": "From manual to intelligent.",
+      "stages": [
+        {
+          "title": "01 — Identify",
+          "body": "Find the processes where automation can create the most value."
+        },
+        {
+          "title": "02 — Simplify",
+          "body": "Redesign workflows before automating them."
+        },
+        {
+          "title": "03 — Automate",
+          "body": "Connect systems and build intelligent workflows around the way your teams work."
+        },
+        {
+          "title": "04 — Scale",
+          "body": "Extend automation across the business as new opportunities emerge."
+        }
+      ],
+      "impactTitle": "When work flows better, teams do more.",
+      "impacts": [
+        {
+          "title": "Less manual work",
+          "body": "Give people time back by automating repetitive tasks."
+        },
+        {
+          "title": "Fewer errors",
+          "body": "Reduce the risk that comes with manual processes and data entry."
+        },
+        {
+          "title": "Faster operations",
+          "body": "Move work through the business with fewer delays and handoffs."
+        },
+        {
+          "title": "Connected processes",
+          "body": "Bring systems, teams and workflows together."
+        },
+        {
+          "title": "More time for what matters",
+          "body": "Let people focus on work that needs human judgement and creativity."
+        }
+      ],
+      "closing": "Automate the work. Give people more time to do theirs.",
+      "cta": "Have a process worth improving?",
+      "ctaBody": "Let's find where intelligent automation can make a difference."
+    },
+    {
+      "name": "Enterprise Automation",
+      "slug": "enterprise-automation",
+      "hero": "Connect the enterprise. Automate at scale.",
+      "intro": "We bring systems, processes and data together to create connected enterprise operations that are simpler, faster and easier to scale.",
+      "support": "Enterprise Integration · System Automation · Workflow Orchestration · Digital Platforms",
+      "problemTitle": "Your systems shouldn't work in silos. Enterprise operations depend on multiple platforms, applications and teams. When they don't work together, complexity grows and work slows down.",
+      "problemBody": "Enterprise operations depend on multiple platforms, applications and teams. When they don't work together, complexity grows and work slows down.",
+      "problemClosing": "We connect the enterprise.",
+      "problems": [
+        {
+          "title": "Disconnected systems",
+          "body": "Critical information moves between platforms without a connected flow."
+        },
+        {
+          "title": "Complex operations",
+          "body": "Multiple applications and processes make everyday work harder to manage."
+        },
+        {
+          "title": "Limited visibility",
+          "body": "When systems operate separately, it becomes harder to see the bigger picture."
+        }
+      ],
+      "capTitle": "Technology that works as one.",
+      "capabilities": [
+        {
+          "title": "Enterprise Integration",
+          "body": "Connect applications, platforms and data across the organization."
+        },
+        {
+          "title": "System Automation",
+          "body": "Automate processes that span multiple enterprise systems."
+        },
+        {
+          "title": "Workflow Orchestration",
+          "body": "Coordinate people, applications and processes across complex workflows."
+        },
+        {
+          "title": "ERP & CRM Automation",
+          "body": "Streamline processes across core business platforms."
+        },
+        {
+          "title": "API & Integration Services",
+          "body": "Create secure connections between systems, applications and data."
+        },
+        {
+          "title": "Digital Platforms",
+          "body": "Build connected technology foundations that support how your business operates."
+        }
+      ],
+      "processTitle": "From disconnected systems to connected operations.",
+      "stages": [
+        {
+          "title": "01 — Understand",
+          "body": "Map your systems, processes and points of friction."
+        },
+        {
+          "title": "02 — Connect",
+          "body": "Bring applications, data and platforms together."
+        },
+        {
+          "title": "03 — Automate",
+          "body": "Create seamless workflows across the enterprise."
+        },
+        {
+          "title": "04 — Scale",
+          "body": "Build an architecture that can evolve with the business."
+        }
+      ],
+      "impactTitle": "When the enterprise connects, work moves.",
+      "impacts": [
+        {
+          "title": "Connected operations",
+          "body": "Bring systems and processes together across the business."
+        },
+        {
+          "title": "Faster workflows",
+          "body": "Reduce delays between applications, teams and processes."
+        },
+        {
+          "title": "Better visibility",
+          "body": "Create a clearer view across the enterprise."
+        },
+        {
+          "title": "Less complexity",
+          "body": "Simplify the way technology supports everyday work."
+        },
+        {
+          "title": "Built to scale",
+          "body": "Create foundations that can grow with the organization."
+        }
+      ],
+      "closing": "Connect the systems. Simplify the business.",
+      "cta": "Ready to connect your enterprise?",
+      "ctaBody": "Let's build technology that works better together."
+    },
+    {
+      "name": "Cloud & Digital Infrastructure",
+      "slug": "cloud-digital-infrastructure",
+      "hero": "Build the foundation for what comes next.",
+      "intro": "We design secure, scalable cloud and digital infrastructure that helps businesses run better today and adapt faster tomorrow.",
+      "support": "Cloud Strategy · Cloud Engineering · Infrastructure Modernisation · Cybersecurity",
+      "problemTitle": "Technology needs a stronger foundation. Legacy infrastructure, disconnected environments and growing technology demands can make it harder to scale, secure and evolve the business.",
+      "problemBody": "Legacy infrastructure, disconnected environments and growing technology demands can make it harder to scale, secure and evolve the business.",
+      "problemClosing": "We build the foundation around your needs.",
+      "problems": [
+        {
+          "title": "Legacy infrastructure",
+          "body": "Older systems can limit flexibility, performance and growth."
+        },
+        {
+          "title": "Growing complexity",
+          "body": "Multiple environments and platforms make technology harder to manage."
+        },
+        {
+          "title": "Rising demands",
+          "body": "Businesses need infrastructure that can scale without compromising security or reliability."
+        }
+      ],
+      "capTitle": "Infrastructure built for change.",
+      "capabilities": [
+        {
+          "title": "Cloud Strategy & Migration",
+          "body": "Plan and move workloads to the cloud with a clear path forward."
+        },
+        {
+          "title": "Cloud Engineering",
+          "body": "Design and build cloud environments around your business requirements."
+        },
+        {
+          "title": "Infrastructure Modernisation",
+          "body": "Modernise legacy environments for greater flexibility and performance."
+        },
+        {
+          "title": "Cloud Security",
+          "body": "Build security into infrastructure, applications and cloud environments."
+        },
+        {
+          "title": "DevOps & Automation",
+          "body": "Automate development and infrastructure processes for faster, more reliable delivery."
+        },
+        {
+          "title": "Managed Cloud Infrastructure",
+          "body": "Keep critical environments secure, reliable and ready to scale."
+        }
+      ],
+      "processTitle": "From infrastructure to advantage.",
+      "stages": [
+        {
+          "title": "01 — Assess",
+          "body": "Understand your existing environment, requirements and opportunities."
+        },
+        {
+          "title": "02 — Design",
+          "body": "Create an infrastructure architecture built around your business."
+        },
+        {
+          "title": "03 — Modernise",
+          "body": "Migrate, integrate and modernise the technology foundation."
+        },
+        {
+          "title": "04 — Optimise",
+          "body": "Continuously improve performance, security and scalability."
+        }
+      ],
+      "impactTitle": "A stronger foundation changes what is possible.",
+      "impacts": [
+        {
+          "title": "Greater scalability",
+          "body": "Expand infrastructure as your business grows."
+        },
+        {
+          "title": "Better performance",
+          "body": "Build environments designed for reliability and speed."
+        },
+        {
+          "title": "Stronger security",
+          "body": "Protect critical systems and data across the infrastructure."
+        },
+        {
+          "title": "More flexibility",
+          "body": "Adapt technology faster as business needs change."
+        },
+        {
+          "title": "Lower complexity",
+          "body": "Create simpler, more manageable technology environments."
+        }
+      ],
+      "closing": "Build the foundation. Be ready for what comes next.",
+      "cta": "Ready to modernise your infrastructure?",
+      "ctaBody": "Let's build a technology foundation that can grow with your business."
+    },
+    {
+      "name": "Emerging Technology",
+      "slug": "emerging-technology",
+      "hero": "Explore what technology can make possible.",
+      "intro": "We help businesses understand, test and apply emerging technologies that can create new ways to work, operate and grow.",
+      "support": "IoT · Digital Twins · Blockchain · Advanced Computing · Extended Reality",
+      "problemTitle": "The challenge isn't knowing what's new. It's knowing what matters.",
+      "problemBody": "New technologies appear quickly. The real challenge is identifying where they can create meaningful value — and turning that potential into something practical.",
+      "problemClosing": "",
+      "problems": [
+        {
+          "title": "Too much noise",
+          "body": "New technologies can make it difficult to know where to focus."
+        },
+        {
+          "title": "Unclear value",
+          "body": "A promising technology does not always solve a real business problem."
+        },
+        {
+          "title": "From experiment to reality",
+          "body": "Moving from a proof of concept to something useful takes the right strategy and execution."
+        }
+      ],
+      "capTitle": "From possibility to practical use.",
+      "capabilities": [
+        {
+          "title": "Internet of Things",
+          "body": "Connect physical assets and environments to create real-time intelligence."
+        },
+        {
+          "title": "Digital Twins",
+          "body": "Create dynamic digital representations of assets, systems and operations."
+        },
+        {
+          "title": "Blockchain",
+          "body": "Explore trusted, transparent ways to connect transactions, data and ecosystems."
+        },
+        {
+          "title": "Extended Reality",
+          "body": "Create immersive experiences for training, collaboration and new ways of interacting with information."
+        },
+        {
+          "title": "Advanced Computing",
+          "body": "Explore emerging computing approaches for problems that demand new levels of capability."
+        },
+        {
+          "title": "Technology Prototyping",
+          "body": "Turn promising ideas into working concepts that can be tested in the real world."
+        }
+      ],
+      "processTitle": "From emerging idea to real opportunity.",
+      "stages": [
+        {
+          "title": "01 — Explore",
+          "body": "Understand the technology and where it could create value."
+        },
+        {
+          "title": "02 — Assess",
+          "body": "Evaluate its relevance, feasibility and potential impact."
+        },
+        {
+          "title": "03 — Experiment",
+          "body": "Build and test practical use cases."
+        },
+        {
+          "title": "04 — Scale",
+          "body": "Take what works and turn it into something the business can use."
+        }
+      ],
+      "impactTitle": "The right technology opens new possibilities.",
+      "impacts": [
+        {
+          "title": "New opportunities",
+          "body": "Identify where emerging technology can create new value."
+        },
+        {
+          "title": "Better experiences",
+          "body": "Create new ways for people, products and systems to interact."
+        },
+        {
+          "title": "Smarter operations",
+          "body": "Apply new technologies to improve how the business works."
+        },
+        {
+          "title": "Future readiness",
+          "body": "Build the understanding and capabilities needed for what comes next."
+        },
+        {
+          "title": "Practical innovation",
+          "body": "Move beyond experimentation to solutions with real business value."
+        }
+      ],
+      "closing": "Don't chase what's new. Find what matters.",
+      "cta": "Exploring what's next?",
+      "ctaBody": "Let's find where emerging technology can make a difference."
+    }
+  ],
+  "industries": [
+    {
+      "name": "Manufacturing",
+      "slug": "manufacturing",
+      "short": "Smarter operations. Connected production.",
+      "hero": "Build smarter. Operate better.",
+      "intro": "We help manufacturers connect operations, data and intelligence to improve productivity, visibility and decision-making.",
+      "challengeTitle": "Manufacturing is becoming more connected — and more complex.",
+      "challengeBody": "Fragmented systems, manual processes, production variability and growing operational demands make it harder to move efficiently.",
+      "opTitle": "Make every operation work smarter.",
+      "opportunities": [
+        {
+          "title": "Connected Operations",
+          "body": "Bring production, systems and data together."
+        },
+        {
+          "title": "Predictive Intelligence",
+          "body": "Anticipate equipment and operational issues."
+        },
+        {
+          "title": "Intelligent Automation",
+          "body": "Automate repetitive processes across the factory."
+        },
+        {
+          "title": "Digital Operations",
+          "body": "Create better visibility across production."
+        }
+      ],
+      "useCases": [
+        "Predictive Maintenance",
+        "Production Intelligence",
+        "Quality Analytics",
+        "Factory Automation",
+        "Supply Chain Visibility",
+        "Digital Twins"
+      ],
+      "cta": "Ready to build a smarter operation?"
+    },
+    {
+      "name": "Supply Chain & Logistics",
+      "slug": "supply-chain-logistics",
+      "short": "Visibility across every movement.",
+      "hero": "Make every movement visible.",
+      "intro": "We connect data, systems and intelligence to help supply chains move faster, respond earlier and operate with greater visibility.",
+      "challengeTitle": "Supply chains don't stop at one system.",
+      "challengeBody": "Multiple partners, changing demand, fragmented information and operational uncertainty make end-to-end visibility difficult.",
+      "opTitle": "",
+      "opportunities": [
+        {
+          "title": "Supply Chain Visibility",
+          "body": "See what is happening across the network."
+        },
+        {
+          "title": "Demand Intelligence",
+          "body": "Use data to anticipate changing demand."
+        },
+        {
+          "title": "Logistics Automation",
+          "body": "Automate workflows across logistics operations."
+        },
+        {
+          "title": "Predictive Operations",
+          "body": "Identify disruptions before they become bigger problems."
+        }
+      ],
+      "useCases": [
+        "Demand Forecasting",
+        "Route Optimisation",
+        "Warehouse Automation",
+        "Fleet Intelligence",
+        "Inventory Optimisation",
+        "Shipment Visibility"
+      ],
+      "cta": "Ready to build a more connected supply chain?"
+    },
+    {
+      "name": "Financial Services",
+      "slug": "financial-services",
+      "short": "Intelligence for better decisions.",
+      "hero": "Turn financial data into intelligence.",
+      "intro": "We help financial organizations use AI, automation and data to improve decisions, streamline operations and create better experiences.",
+      "challengeTitle": "Financial services runs on information.",
+      "challengeBody": "High volumes of data, complex processes, regulatory requirements and rising customer expectations demand smarter ways of working.",
+      "opTitle": "",
+      "opportunities": [
+        {
+          "title": "Intelligent Operations",
+          "body": "Simplify complex financial processes."
+        },
+        {
+          "title": "Decision Intelligence",
+          "body": "Turn data into faster, informed decisions."
+        },
+        {
+          "title": "Process Automation",
+          "body": "Reduce manual work across operations."
+        },
+        {
+          "title": "Customer Intelligence",
+          "body": "Create more relevant and responsive experiences."
+        }
+      ],
+      "useCases": [
+        "Fraud Detection",
+        "Risk Analytics",
+        "Customer Intelligence",
+        "Document Processing",
+        "Regulatory Automation",
+        "Financial Forecasting"
+      ],
+      "cta": "Looking to make financial operations smarter?"
+    },
+    {
+      "name": "Retail & Consumer",
+      "slug": "retail-consumer",
+      "short": "Technology built around the customer.",
+      "hero": "Technology built around the customer.",
+      "intro": "We connect data, intelligence and automation to help retailers understand customers, optimise operations and respond faster.",
+      "challengeTitle": "Customers move quickly. Businesses need to keep up.",
+      "challengeBody": "Changing expectations, fragmented channels, complex inventory and intense competition demand greater visibility and agility.",
+      "opTitle": "",
+      "opportunities": [
+        {
+          "title": "Customer Intelligence",
+          "body": "Understand customers across every interaction."
+        },
+        {
+          "title": "Demand Intelligence",
+          "body": "Anticipate what customers need next."
+        },
+        {
+          "title": "Connected Commerce",
+          "body": "Connect digital and physical experiences."
+        },
+        {
+          "title": "Intelligent Operations",
+          "body": "Automate and optimise everyday retail processes."
+        }
+      ],
+      "useCases": [
+        "Personalisation",
+        "Demand Forecasting",
+        "Inventory Intelligence",
+        "Customer Analytics",
+        "Recommendation Systems",
+        "Store Automation"
+      ],
+      "cta": "Ready to create a more intelligent customer experience?"
+    },
+    {
+      "name": "Energy & Utilities",
+      "slug": "energy-utilities",
+      "short": "Smarter infrastructure. Better efficiency.",
+      "hero": "Smarter infrastructure. Better decisions.",
+      "intro": "We help energy and utility organizations connect assets, data and intelligence to improve efficiency, reliability and visibility.",
+      "challengeTitle": "Energy systems are becoming more complex.",
+      "challengeBody": "Growing demand, ageing infrastructure, distributed assets and changing operating conditions require better ways to monitor and manage critical systems.",
+      "opTitle": "",
+      "opportunities": [
+        {
+          "title": "Asset Intelligence",
+          "body": "Understand asset performance in real time."
+        },
+        {
+          "title": "Predictive Maintenance",
+          "body": "Identify potential failures earlier."
+        },
+        {
+          "title": "Energy Intelligence",
+          "body": "Use data to improve efficiency and planning."
+        },
+        {
+          "title": "Connected Infrastructure",
+          "body": "Bring assets, systems and operations together."
+        }
+      ],
+      "useCases": [
+        "Asset Monitoring",
+        "Predictive Maintenance",
+        "Demand Forecasting",
+        "Energy Analytics",
+        "Grid Intelligence",
+        "Field Service Automation"
+      ],
+      "cta": "Ready to make infrastructure smarter?"
+    },
+    {
+      "name": "Healthcare & Life Sciences",
+      "slug": "healthcare-life-sciences",
+      "short": "Connected technology for better outcomes.",
+      "hero": "Connect intelligence with better outcomes.",
+      "intro": "We help healthcare and life sciences organizations use technology to improve operations, insights and the way information moves.",
+      "challengeTitle": "Healthcare depends on connected information.",
+      "challengeBody": "Fragmented systems, large volumes of data and complex workflows can make it harder to deliver efficient, informed services.",
+      "opTitle": "",
+      "opportunities": [
+        {
+          "title": "Healthcare Intelligence",
+          "body": "Turn complex information into actionable insight."
+        },
+        {
+          "title": "Process Automation",
+          "body": "Simplify administrative and operational workflows."
+        },
+        {
+          "title": "Data Integration",
+          "body": "Connect information across systems."
+        },
+        {
+          "title": "Predictive Analytics",
+          "body": "Use data to identify patterns and anticipate needs."
+        }
+      ],
+      "useCases": [
+        "Clinical Analytics",
+        "Patient Journey Intelligence",
+        "Document Automation",
+        "Resource Optimisation",
+        "Research Analytics",
+        "Operational Intelligence"
+      ],
+      "cta": "Looking to connect healthcare intelligence?"
+    },
+    {
+      "name": "Government & Public Sector",
+      "slug": "government-public-sector",
+      "short": "Modern technology for public services.",
+      "hero": "Modern technology for better public services.",
+      "intro": "We help public-sector organizations modernize systems, simplify processes and use data more effectively.",
+      "challengeTitle": "Public services operate at scale.",
+      "challengeBody": "Legacy systems, complex processes, large volumes of information and growing expectations create a need for simpler, more connected technology.",
+      "opTitle": "",
+      "opportunities": [
+        {
+          "title": "Digital Public Services",
+          "body": "Create simpler experiences for citizens."
+        },
+        {
+          "title": "Process Automation",
+          "body": "Reduce manual administrative work."
+        },
+        {
+          "title": "Data Intelligence",
+          "body": "Bring information together for better decisions."
+        },
+        {
+          "title": "Enterprise Modernisation",
+          "body": "Build stronger digital foundations."
+        }
+      ],
+      "useCases": [
+        "Citizen Services",
+        "Document Processing",
+        "Case Management",
+        "Data Analytics",
+        "Workflow Automation",
+        "Digital Platforms"
+      ],
+      "cta": "Ready to modernise public services?"
+    },
+    {
+      "name": "Telecommunications",
+      "slug": "telecommunications",
+      "short": "Connected networks. Intelligent operations.",
+      "hero": "Connect networks with intelligence.",
+      "intro": "We help telecommunications organizations use automation, analytics and AI to improve network operations and customer experiences.",
+      "challengeTitle": "Connected networks create connected complexity.",
+      "challengeBody": "Growing data volumes, network demands, operational complexity and customer expectations require greater intelligence across the ecosystem.",
+      "opTitle": "",
+      "opportunities": [
+        {
+          "title": "Network Intelligence",
+          "body": "Monitor and understand network performance."
+        },
+        {
+          "title": "Intelligent Operations",
+          "body": "Automate network and operational processes."
+        },
+        {
+          "title": "Customer Intelligence",
+          "body": "Understand behaviour and improve experiences."
+        },
+        {
+          "title": "Predictive Analytics",
+          "body": "Anticipate network and operational issues."
+        }
+      ],
+      "useCases": [
+        "Network Monitoring",
+        "Predictive Maintenance",
+        "Customer Analytics",
+        "Service Automation",
+        "Network Optimisation",
+        "Field Operations"
+      ],
+      "cta": "Ready to make your network more intelligent?"
+    },
+    {
+      "name": "Agriculture",
+      "slug": "agriculture",
+      "short": "Technology for smarter, more productive agriculture.",
+      "hero": "Smarter technology for a changing landscape.",
+      "intro": "We bring data, automation and connected technology to help agriculture become more informed, efficient and resilient.",
+      "challengeTitle": "Agriculture is shaped by variables beyond control.",
+      "challengeBody": "Changing conditions, resource constraints, fragmented information and unpredictable demand make timely decisions increasingly important.",
+      "opTitle": "",
+      "opportunities": [
+        {
+          "title": "Precision Agriculture",
+          "body": "Use data to make more informed decisions."
+        },
+        {
+          "title": "Connected Agriculture",
+          "body": "Monitor crops, equipment and conditions."
+        },
+        {
+          "title": "Predictive Intelligence",
+          "body": "Anticipate changes and potential risks."
+        },
+        {
+          "title": "Resource Optimisation",
+          "body": "Use water, energy and other resources more efficiently."
+        }
+      ],
+      "useCases": [
+        "Crop Monitoring",
+        "Yield Prediction",
+        "Smart Irrigation",
+        "Equipment Monitoring",
+        "Weather Intelligence",
+        "Supply Chain Analytics"
+      ],
+      "cta": "Ready to make agriculture more intelligent?"
+    }
+  ]
+}

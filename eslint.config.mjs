@@ -11,6 +11,10 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    // Lovable copy uses plain apostrophes in JSX text.
+    rules: { "react/no-unescaped-entities": "off" },
+  },
 ];
 
 export default eslintConfig;

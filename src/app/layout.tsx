@@ -1,29 +1,25 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
-import { ThemeProvider } from "@/contexts/ThemeContext";
+import type { Metadata, Viewport } from 'next';
+import type { ReactNode } from 'react';
+import { Header, Footer } from '@/components/cosmos/Shell';
+import { BrandCursor } from '@/components/cosmos/BrandCursor';
+import './globals.css';
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata = {
-  title: "Cosmos - AI Technology",
-  description: "Engineering the Future with Artificial Intelligence",
+export const metadata: Metadata = {
+  title: 'COSMOS Innovation Labs',
+  icons: { icon: { url: '/favicon.png', type: 'image/png' } },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = { width: 'device-width', initialScale: 1 };
+
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      {/* The background is now controlled by globals.css */}
-      <body className={inter.className}>
-        <ThemeProvider>
-          <Navbar />
-          {children}
-        </ThemeProvider>
+    <html lang="en">
+      <body>
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
+        <BrandCursor />
       </body>
     </html>
   );
